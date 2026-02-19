@@ -59,8 +59,7 @@ function OrganisersAndActingGenerals() {
       designation: "Acting General, GDG ABESEC",
       src: "OrganiserAndAG'sImages/ActingGeneral4.jpg",
       socials: {
-        linkedin:
-          "https://www.linkedin.com/in/deepanshu-kaushik-174059297/",
+        linkedin: "https://www.linkedin.com/in/deepanshu-kaushik-174059297/",
         twitter: "https://x.com/Deepanshu25u",
         github: "https://github.com/Deepanshu-ui-dev",
       },
@@ -72,10 +71,9 @@ function OrganisersAndActingGenerals() {
       designation: "Acting General, GDG ABESEC",
       src: "OrganiserAndAG'sImages/ActingGeneral5.jpg",
       socials: {
-        linkedin:
-          "https://www.linkedin.com/in/kshitiz-srivastav-a87028333/",
+        linkedin: "https://www.linkedin.com/in/kshitiz-srivastav-a87028333/",
         twitter: "https://x.com/KshitizonX",
-        github: "",
+        github: "https://github.com/",
       },
     },
   ];
@@ -83,14 +81,16 @@ function OrganisersAndActingGenerals() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-[#0a0a0a] text-white flex flex-col items-center justify-center 
-    pt-12 pb-3 sm:pt-16 sm:pb-6 lg:pt-20 lg:pb-10 px-4 md:px-6 lg:px-8 overflow-hidden">
+    <div
+      className="bg-[#0a0a0a] text-white flex flex-col items-center justify-center 
+    pt-12 pb-3 sm:pt-16 sm:pb-6 lg:pt-20 lg:pb-10 px-4 md:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="text-center mt-10 mb-6 sm:mb-10 w-full px-2">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#e5e5e5] mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Meet the Leadership{" "}
-          <span className="text-[#4285F4]">
-            Board
-          </span>
+        <h2
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#e5e5e5] mb-4"
+          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+        >
+          Meet the Leadership <span className="text-[#4285F4]">Board</span>
         </h2>
 
         <div className="h-[2px] w-40 sm:w-60 md:w-80 lg:w-[400px] mx-auto bg-[#4285F4] rounded-full"></div>

@@ -1,39 +1,39 @@
 // SMTP2GO API for sending contact form emails
-const SMTP2GO_API_URL = 'https://api.smtp2go.com/v3/email/send';
-const smtp2goApiKey = process.env.SMTP2GO_API_KEY || '';
-const senderEmail = process.env.SENDER_EMAIL || 'noreply@gdgabesec.com';
-const receiverEmail = process.env.RECEIVER_EMAIL || 'anandanmol1010@gmail.com';
+const SMTP2GO_API_URL = "https://api.smtp2go.com/v3/email/send";
+const smtp2goApiKey = process.env.SMTP2GO_API_KEY || "";
+const senderEmail = process.env.SENDER_EMAIL || "dsc@abes.ac.in";
+const receiverEmail = process.env.RECEIVER_EMAIL || "gdg.abesec@gmail.com";
 
 export default async function handler(req, res) {
-    // CORS headers
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,POST');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  // CORS headers
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,POST");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
-    }
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
 
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
 
-    const { name, email, subject, message } = req.body;
+  const { name, email, subject, message } = req.body;
 
-    // Validate required fields
-    if (!name || !email || !subject || !message) {
-        return res.status(400).json({ error: 'All fields are required' });
-    }
+  // Validate required fields
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
 
-    // Check API key
-    if (!smtp2goApiKey) {
-        console.error('SMTP2GO_API_KEY not configured');
-        return res.status(500).json({ error: 'Email service not configured' });
-    }
+  // Check API key
+  if (!smtp2goApiKey) {
+    console.error("SMTP2GO_API_KEY not configured");
+    return res.status(500).json({ error: "Email service not configured" });
+  }
 
-    // HTML email template matching GDG ABESEC theme
-    const htmlContent = `
+  // HTML email template matching GDG ABESEC theme
+  const htmlContent = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,7 +93,7 @@ export default async function handler(req, res) {
       </div>
       <div class="message-box">
         <div class="message-label">Message</div>
-        <div class="message-text">${message.replace(/\n/g, '<br>')}</div>
+        <div class="message-text">${message.replace(/\n/g, "<br>")}</div>
       </div>
     </div>
     <div class="footer">
@@ -109,37 +109,37 @@ export default async function handler(req, res) {
 </body>
 </html>`;
 
-    try {
-        const response = await fetch(SMTP2GO_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Smtp2go-Api-Key': smtp2goApiKey,
-                'accept': 'application/json'
-            },
-            body: JSON.stringify({
-                sender: senderEmail,
-                to: [receiverEmail],
-                subject: `[GDG Contact] ${subject}`,
-                html_body: htmlContent
-            })
-        });
+  try {
+    const response = await fetch(SMTP2GO_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Smtp2go-Api-Key": smtp2goApiKey,
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        sender: senderEmail,
+        to: [receiverEmail],
+        subject: `[GDG Contact] ${subject}`,
+        html_body: htmlContent,
+      }),
+    });
 
-        const result = await response.json();
+    const result = await response.json();
 
-        if (response.ok && result.data?.succeeded === 1) {
-            return res.status(200).json({
-                success: true,
-                message: 'Email sent successfully'
-            });
-        } else {
-            console.error('SMTP2GO error:', result);
-            return res.status(500).json({
-                error: result.data?.error || 'Failed to send email'
-            });
-        }
-    } catch (error) {
-        console.error('Error sending email:', error);
-        return res.status(500).json({ error: 'Failed to send email' });
+    if (response.ok && result.data?.succeeded === 1) {
+      return res.status(200).json({
+        success: true,
+        message: "Email sent successfully",
+      });
+    } else {
+      console.error("SMTP2GO error:", result);
+      return res.status(500).json({
+        error: result.data?.error || "Failed to send email",
+      });
     }
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return res.status(500).json({ error: "Failed to send email" });
+  }
 }

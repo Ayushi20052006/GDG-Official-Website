@@ -57,7 +57,7 @@ const teamMembers = {
         "The confident voice that inspires the team, leading with clarity, charm and creative energy.",
       img: "/TeamPageImages/Kshitiz Srivastav.jpg",
       linkedin: "https://www.linkedin.com/in/kshitiz-srivastav-a87028333/",
-      github: "",
+      github: "https://github.com/",
     },
     {
       name: "Deepanshu Kaushik",
@@ -95,7 +95,7 @@ const teamMembers = {
         "The tech brain who calmly pieces together logic, creativity and innovation like a perfect puzzle.",
       img: "/TeamPageImages/Keshav Khippal.jpg",
       linkedin: "https://www.linkedin.com/in/keshav-khippal/",
-      github: "https://github.com/",
+      github: "https://github.com/KeshavKhippal",
     },
     {
       name: "Anshika Srivastav",
@@ -113,7 +113,7 @@ const teamMembers = {
         "A creative communicator who blends charm and strategy to make every message unforgettable.",
       img: "/TeamPageImages/Harshit Agarwal.jpg",
       linkedin: "https://www.linkedin.com/in/harshit-agrawal-5aab84197/",
-      github: "https://github.com/",
+      github: "https://github.com/harshit-ag5965",
     },
     {
       name: "Amanya Maurya",
@@ -131,7 +131,7 @@ const teamMembers = {
         "A creative mind who adds magic, rhythm and fresh vibes to every moment of Elixir.",
       img: "/TeamPageImages/Ayush Jain EH.jpg",
       linkedin: "https://www.linkedin.com/in/urayushjain",
-      github: "https://github.com/",
+      github: "https://github.com/URAYUSHJAIN",
     },
     {
       name: "Arpan Pal",
@@ -176,7 +176,7 @@ const teamMembers = {
         "The creative thinker who makes every post feel expressive, aesthetic and full of personality.",
       img: "/TeamPageImages/Sakshi Vishnoi.jpg",
       linkedin: "https://www.linkedin.com/in/sakshi-vishnoi-7770b2315/",
-      github: "https://github.com/",
+      github: "https://github.com/sakshiv3107",
     },
     {
       name: "Aditya Kumar Vaish",
@@ -753,11 +753,11 @@ const Team = () => {
         {/* ================= BRANDING (Matches other pages) ================= */}
         <div className="fixed top-4 left-4 md:top-8 md:left-8 z-20 flex flex-col gap-2 pointer-events-none">
           <div className="flex items-center gap-2 pointer-events-auto">
-             <img
-                                    src={logo}
-                                    className="h-8 w-10 sm:h-12 sm:w-14 md:h-14 md:w-20"
-                                    alt="gdgLogo"
-                                  />
+            <img
+              src={logo}
+              className="h-8 w-10 sm:h-12 sm:w-14 md:h-14 md:w-20"
+              alt="gdgLogo"
+            />
 
             {/* Google Text Animation */}
             <AnimatePresence>
@@ -819,7 +819,7 @@ const Team = () => {
               <span className="tm-hero-badge">THE BRILLIANT MINDS</span>
             </motion.div>
 
-             <motion.h1
+            <motion.h1
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -840,10 +840,10 @@ const Team = () => {
               }}
             >
               <motion.span
-              initial={{ backgroundSize: "0% 4px" }}
-              animate={{ backgroundSize: "100% 4px" }}
-              transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
-              className="
+                initial={{ backgroundSize: "0% 4px" }}
+                animate={{ backgroundSize: "100% 4px" }}
+                transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+                className="
               inline
               leading-[1.25]
               bg-[linear-gradient(#ffffff,#ffffff)]
@@ -856,7 +856,7 @@ const Team = () => {
               >
                 MEET OUR TEAM
               </motion.span>
-              </motion.h1>
+            </motion.h1>
 
             <motion.p
               initial={{ y: 30, opacity: 0 }}
