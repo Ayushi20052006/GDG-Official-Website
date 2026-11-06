@@ -12,6 +12,19 @@ const EventsTimelineWithUpcoming = () => {
 
   const pastEvents = [
     {
+      id: 0,
+      name: "Exora",
+      date: "March 21, 2026",
+      description: "A showcase of innovative projects and ideas from students, featuring interactive demos, presentations, and networking opportunities.",
+      coverImage: "../exora-cover.jpg",
+      gallery: [
+        "../exora1.jpg",
+        "../exora2.jpg",
+        "../exora3.jpg",
+        "../exora4.jpg"
+      ]
+    },
+    {
       id: 1,
       name: "MTG 2.0",
       date: "November 29, 2025",
