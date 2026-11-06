@@ -91,6 +91,19 @@ const mockProjects = [
     deployed_url: "https://powermesh-gargi-demo.onrender.com/",
     tech_stack: ["Next.js", "React", "TypeScript", "Fastify", "Node.js", "PostgreSQL", "Docker", "CUDA"]
   },
+  {
+    id: 6,
+    title: "ZARA COLLECTION",
+    description:
+      "ZARA COLLECTION is a responsive fashion website showcasing affordable ethnic wear, including short kurtis, long kurtis, Farsi suits, and layered gowns. Visitors can browse product designs, sizes, and price ranges, read customer reviews, and contact the store to order through WhatsApp",
+    thumbnail_url: "projects-imgs/anjali-projects.png",
+    owner_image: "projects-imgs/anjali.jpeg",
+    owner_name: "Anjali Dewari",
+    github_url: "https://github.com/AnjaliDewari19/Project--Zara",
+    linkedin_url: "https://www.linkedin.com/in/anjali-dewari/",
+    deployed_url: "https://zaracollection26.netlify.app/",
+    tech_stack: ["React.js", "JavaScript", "HTML5", "CSS3"]
+  },
 ];
 const mockAchievements = [
   {
