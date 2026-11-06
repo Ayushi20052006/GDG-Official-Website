@@ -78,6 +78,58 @@ const mockProjects = [
     deployed_url: "https://mini-project-movies-space.vercel.app/",
     tech_stack: ["React JS", "Node JS", "Tailwind CSS", "Express JS"],
   },
+  {
+    id: 5,
+    title: "PowerMesh",
+    description:
+      "PowerMesh is a decentralized distributed computing platform that connects users who need computational power with devices that have idle CPU or GPU resources. It offers a cost-effective alternative to traditional cloud computing by enabling secure, peer-to-peer resource sharing using containerized execution and workload isolation.",
+    thumbnail_url: "/projects-imgs/kavya-projects.png",
+    owner_image: "/projects-imgs/kavya.png",
+    owner_name: "Kavya Jain",
+    github_url: "https://github.com/kavya-jain14/POWERMESH",
+    linkedin_url: "https://www.linkedin.com/in/kavya-jain-421119390/",
+    deployed_url: "https://powermesh-gargi-demo.onrender.com/",
+    tech_stack: ["Next.js", "React", "TypeScript", "Fastify", "Node.js", "PostgreSQL", "Docker", "CUDA"]
+  },
+  {
+    id: 6,
+    title: "Metrologic",
+    description:
+      "Evidence-Backed AI for Legal Metrology Inspection: MetroLogic is an AI-assisted inspection platform for checking selected packaged-commodity declarations under Legal Metrology requirements.",
+    thumbnail_url: "/projects-imgs/ayushman-projects.jpg",
+    owner_image: "/projects-imgs/ayushman.jpeg",
+    owner_name: "Ayushman Shukla",
+    github_url: "https://github.com/ayushmanshukla362/Metrologic",
+    linkedin_url: "https://www.linkedin.com/in/ayushman-shukla-30b714391/",
+    deployed_url: "https://metrologic-frontend.onrender.com/",
+    tech_stack: ["Python", "FastAPI", "PostgreSQL", "Google Gemini API", "Docker", "JavaScript"]
+  },
+  {
+    id: 7,
+    title: "TaxGenie",
+    description:
+      "TaxGenie is an AI-powered platform simplifying tax management, GST compliance, and financial filing for individuals and small businesses in India.",
+    thumbnail_url: "/projects-imgs/uday-projects.png",
+    owner_image: "/projects-imgs/uday.jpeg",
+    owner_name: "Uday Jain",
+    github_url: "https://github.com/udayjain06/CA-Assistant",
+    linkedin_url: "https://www.linkedin.com/in/uday-jain-80a312308/",
+    deployed_url: "https://ca-assistant-lac.vercel.app/dashboard",
+    tech_stack: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "Python", "FastAPI"]
+  },
+  {
+    id: 8,
+    title: "ZARA COLLECTION",
+    description:
+      "ZARA COLLECTION is a responsive fashion website showcasing affordable ethnic wear, including short kurtis, long kurtis, Farsi suits, and layered gowns. Visitors can browse product designs, sizes, and price ranges, read customer reviews, and contact the store to order through WhatsApp",
+    thumbnail_url: "/projects-imgs/anjali-projects.png",
+    owner_image: "/projects-imgs/anjali.jpeg",
+    owner_name: "Anjali Dewari",
+    github_url: "https://github.com/AnjaliDewari19/Project--Zara",
+    linkedin_url: "https://www.linkedin.com/in/anjali-dewari/",
+    deployed_url: "https://zaracollection26.netlify.app/",
+    tech_stack: ["React.js", "JavaScript", "HTML5", "CSS3"]
+  },
 ];
 const mockAchievements = [
   {
