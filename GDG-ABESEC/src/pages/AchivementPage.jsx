@@ -78,6 +78,19 @@ const mockProjects = [
     deployed_url: "https://mini-project-movies-space.vercel.app/",
     tech_stack: ["React JS", "Node JS", "Tailwind CSS", "Express JS"],
   },
+  {
+    id: 5,
+    title: "PowerMesh",
+    description:
+      "PowerMesh is a decentralized distributed computing platform that connects users who need computational power with devices that have idle CPU or GPU resources. It offers a cost-effective alternative to traditional cloud computing by enabling secure, peer-to-peer resource sharing using containerized execution and workload isolation.",
+    thumbnail_url: "projects-imgs/kavya-projects.png",
+    owner_image: "projects-imgs/kavya.png",
+    owner_name: "Kavya Jain",
+    github_url: "https://github.com/kavya-jain14/POWERMESH",
+    linkedin_url: "https://www.linkedin.com/in/kavya-jain-421119390/",
+    deployed_url: "https://powermesh-gargi-demo.onrender.com/",
+    tech_stack: ["Next.js", "React", "TypeScript", "Fastify", "Node.js", "PostgreSQL", "Docker", "CUDA"]
+  },
 ];
 const mockAchievements = [
   {
