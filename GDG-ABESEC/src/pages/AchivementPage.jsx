@@ -106,6 +106,19 @@ const mockProjects = [
   },
   {
     id: 7,
+    title: "TaxGenie",
+    description:
+      "TaxGenie is an AI-powered platform simplifying tax management, GST compliance, and financial filing for individuals and small businesses in India.",
+    thumbnail_url: "/projects-imgs/uday-projects.png",
+    owner_image: "/projects-imgs/uday.jpeg",
+    owner_name: "Uday Jain",
+    github_url: "https://github.com/udayjain06/CA-Assistant",
+    linkedin_url: "https://www.linkedin.com/in/uday-jain-80a312308/",
+    deployed_url: "https://ca-assistant-lac.vercel.app/dashboard",
+    tech_stack: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "Python", "FastAPI"]
+  },
+  {
+    id: 8,
     title: "ZARA COLLECTION",
     description:
       "ZARA COLLECTION is a responsive fashion website showcasing affordable ethnic wear, including short kurtis, long kurtis, Farsi suits, and layered gowns. Visitors can browse product designs, sizes, and price ranges, read customer reviews, and contact the store to order through WhatsApp",
