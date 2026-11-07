@@ -18,67 +18,6 @@ import logo from "/logo.png";
 
 const mockProjects = [
   {
-    id: 1,
-    title: "AceStudy",
-    description:
-      "Acestudy is a smart learning platform offering notes, previous year question papers, discussion forums, and a faculty dashboard, enabling organized study, collaboration, and effective academic management.",
-    thumbnail_url: "/projects-imgs/priyatosh-project.png",
-    owner_image: "/projects-imgs/priyatosh.jpg",
-    owner_name: "Priyatosh Kumar",
-    github_url: "https://github.com/PriyatoshKumarShahi/Study-Library",
-    linkedin_url: "https://www.linkedin.com/in/priyatoshkumarshahi/",
-    deployed_url: "https://acestudy.onrender.com/",
-    tech_stack: [
-      "React JS",
-      "Express",
-      "Web Sockets",
-      "Node JS",
-      "Mongo DB",
-      "JWT",
-    ],
-  },
-  {
-    id: 2,
-    title: "Smart Resume Reviewer",
-    description:
-      "Smart Resume Reviewer is a web-based application that analyzes resumes and provides structured feedback along with an improved version of the resume. It evaluates content, formatting, and skills presentation, highlighting areas of improvement to help users create clearer and more effective resumes.",
-    thumbnail_url: "/projects-imgs/riddhima-project.jpg",
-    owner_image: "/projects-imgs/riddhima.jpg",
-    owner_name: "Riddhima Agarwal",
-    github_url:
-      "https://github.com/RiddhimaAgarwal28/Smart_Resume_Reviewer_Project",
-    linkedin_url: "https://www.linkedin.com/in/riddhimaagarwalbly/",
-    deployed_url: "https://smart-resume-reviewer-project.onrender.com",
-    tech_stack: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Flask-CORS"],
-  },
-
-  {
-    id: 3,
-    title: "CampusShield",
-    description:
-      "CampusShield is a secure, anonymous web application designed to facilitate student complaint reporting with comprehensive admin management capabilities. Built with modern web technologies for reliability, security, and user experience.",
-    thumbnail_url: "/projects-imgs/anmol-project.png",
-    owner_image: "/projects-imgs/anmol.jpg",
-    owner_name: "Anmol Anand",
-    github_url: "https://github.com/anandanmol1010/CampusShield",
-    linkedin_url: "https://www.linkedin.com/in/anandanmol1010/",
-    deployed_url: "https://campus--shield.vercel.app/",
-    tech_stack: ["React JS", "Typescript", "Tailwind CSS", "Firebase"],
-  },
-  {
-    id: 4,
-    title: "Muvies",
-    description:
-      "Muvies is a full-stack multimedia platform designed to provide users with seamless access to movies and music in one place. The application allows users to explore movies, watch trailers, and create personalized watchlists. Alongside movies, users can stream and download music, making it a complete entertainment solution.",
-    thumbnail_url: "/projects-imgs/tanishq-project.png",
-    owner_image: "/projects-imgs/tanishq.jpeg",
-    owner_name: "Tanishq Saxena",
-    github_url: "https://github.com/Tanishq-7777/miniProjectMoviesSpace",
-    linkedin_url: "https://www.linkedin.com/in/tanishq-saxena-20bb75344/",
-    deployed_url: "https://mini-project-movies-space.vercel.app/",
-    tech_stack: ["React JS", "Node JS", "Tailwind CSS", "Express JS"],
-  },
-  {
     id: 5,
     title: "PowerMesh",
     description:
@@ -129,6 +68,66 @@ const mockProjects = [
     linkedin_url: "https://www.linkedin.com/in/anjali-dewari/",
     deployed_url: "https://zaracollection26.netlify.app/",
     tech_stack: ["React.js", "JavaScript", "HTML5", "CSS3"]
+  },
+  {
+    id: 1,
+    title: "AceStudy",
+    description:
+      "Acestudy is a smart learning platform offering notes, previous year question papers, discussion forums, and a faculty dashboard, enabling organized study, collaboration, and effective academic management.",
+    thumbnail_url: "/projects-imgs/priyatosh-project.png",
+    owner_image: "/projects-imgs/priyatosh.jpg",
+    owner_name: "Priyatosh Kumar",
+    github_url: "https://github.com/PriyatoshKumarShahi/Study-Library",
+    linkedin_url: "https://www.linkedin.com/in/priyatoshkumarshahi/",
+    deployed_url: "https://acestudy.onrender.com/",
+    tech_stack: [
+      "React JS",
+      "Express",
+      "Web Sockets",
+      "Node JS",
+      "Mongo DB",
+      "JWT",
+    ],
+  },
+  {
+    id: 2,
+    title: "Smart Resume Reviewer",
+    description:
+      "Smart Resume Reviewer is a web-based application that analyzes resumes and provides structured feedback along with an improved version of the resume. It evaluates content, formatting, and skills presentation, highlighting areas of improvement to help users create clearer and more effective resumes.",
+    thumbnail_url: "/projects-imgs/riddhima-project.jpg",
+    owner_image: "/projects-imgs/riddhima.jpg",
+    owner_name: "Riddhima Agarwal",
+    github_url:
+      "https://github.com/RiddhimaAgarwal28/Smart_Resume_Reviewer_Project",
+    linkedin_url: "https://www.linkedin.com/in/riddhimaagarwalbly/",
+    deployed_url: "https://smart-resume-reviewer-project.onrender.com",
+    tech_stack: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Flask-CORS"],
+  },
+  {
+    id: 3,
+    title: "CampusShield",
+    description:
+      "CampusShield is a secure, anonymous web application designed to facilitate student complaint reporting with comprehensive admin management capabilities. Built with modern web technologies for reliability, security, and user experience.",
+    thumbnail_url: "/projects-imgs/anmol-project.png",
+    owner_image: "/projects-imgs/anmol.jpg",
+    owner_name: "Anmol Anand",
+    github_url: "https://github.com/anandanmol1010/CampusShield",
+    linkedin_url: "https://www.linkedin.com/in/anandanmol1010/",
+    deployed_url: "https://campus--shield.vercel.app/",
+    tech_stack: ["React JS", "Typescript", "Tailwind CSS", "Firebase"],
+  },
+  {
+    id: 4,
+    title: "Muvies",
+    description:
+      "Muvies is a full-stack multimedia platform designed to provide users with seamless access to movies and music in one place. The application allows users to explore movies, watch trailers, and create personalized watchlists. Alongside movies, users can stream and download music, making it a complete entertainment solution.",
+    thumbnail_url: "/projects-imgs/tanishq-project.png",
+    owner_image: "/projects-imgs/tanishq.jpeg",
+    owner_name: "Tanishq Saxena",
+    github_url: "https://github.com/Tanishq-7777/miniProjectMoviesSpace",
+    linkedin_url: "https://www.linkedin.com/in/tanishq-saxena-20bb75344/",
+    deployed_url: "https://mini-project-movies-space.vercel.app/",
+    tech_stack: ["React JS", "Node JS", "Tailwind CSS", "Express JS"],
   },
 ];
 const mockAchievements = [
