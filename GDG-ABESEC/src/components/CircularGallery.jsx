@@ -275,6 +275,10 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
+       {
+        image: "exora1.jpg",
+        text: "Exora",
+      },
       {
         image: "hackheaven3.jpg",
         text: "Textured surface",
@@ -283,6 +287,11 @@ class App {
         image: "mtg1.JPG",
         text: "Social media image",
       },
+       {
+        image: "exora2.jpg",
+        text: "Exora",
+      },
+     
       {
         image: "image2ForDomeGal.jpeg",
         text: "Modern sculpture",
@@ -291,21 +300,35 @@ class App {
         image: "techwinter1.jpg",
         text: "Social media image",
       },
+       {
+        image: "exora7.jpg",
+        text: "Exora",
+      },
       {
         image: "hackheaven5.jpeg",
         text: "Social media image",
       },
+     
       {
         image: "image3ForDomeGal.jpeg",
         text: "Digital artworkimage",
       },
+     
       {
         image: "mtg2.JPG",
         text: "Social media image",
       },
       {
+        image: "exora3.jpg",
+        text: "Exora",
+      },
+      {
         image: "image4ForDomeGal.jpg",
         text: "Contemporary art",
+      },
+      {
+        image: "exora6.jpg",
+        text: "Exora",
       },
       {
         image: "techwinter2.jpg",
@@ -316,12 +339,20 @@ class App {
         text: "Social media image",
       },
       {
+        image: "exora4.jpg",
+        text: "Exora",
+      },
+      {
         image: "image6ForDomeGal.jpg",
         text: "Social media image",
       },
       {
         image: "mtg3.JPG",
         text: "Social media image",
+      },
+      {
+        image: "exora5.jpg",
+        text: "Exora",
       },
       {
         image: "techwinter3.jpg",
