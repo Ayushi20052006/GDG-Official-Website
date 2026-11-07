@@ -6,6 +6,9 @@ const DEFAULT_IMAGES = [
     src: "image1ForDomeGal.jpeg",
     alt: "Abstract art",
   },
+  { src: "exora1.jpg", 
+    alt: "Exora" 
+  },
   {
     src: "image2ForDomeGal.jpeg",
     alt: "Modern sculpture",
@@ -13,6 +16,9 @@ const DEFAULT_IMAGES = [
   {
     src: "image3ForDomeGal.jpeg",
     alt: "Digital artwork",
+  },
+  { src: "exora2.jpg", 
+    alt: "Exora" 
   },
   {
     src: "image4ForDomeGal.jpg",
@@ -22,6 +28,9 @@ const DEFAULT_IMAGES = [
     src: "hackheaven3.jpg",
     alt: "Textured surface",
   },
+  { src: "exora3.jpg", 
+    alt: "Exora" 
+  },
   {
     src: "image6ForDomeGal.jpg",
     alt: "Social media image",
@@ -29,6 +38,9 @@ const DEFAULT_IMAGES = [
   {
     src: "mtg1.JPG",
     alt: "Social media image",
+  },
+  { src: "exora4.jpg", 
+    alt: "Exora" 
   },
   {
     src: "mtg2.JPG",
@@ -42,9 +54,15 @@ const DEFAULT_IMAGES = [
     src: "techwinter1.jpg",
     alt: "Social media image",
   },
+  { src: "exora5.jpg", 
+    alt: "Exora" 
+  },
   {
     src: "techwinter2.jpg",
     alt: "Social media image",
+  },
+  { src: "exora6.jpg", 
+    alt: "Exora" 
   },
   {
     src: "techwinter3.jpg",
@@ -66,6 +84,9 @@ const DEFAULT_IMAGES = [
   },
   {
     src: "hackheaven2.jpg",
+  },
+  { src: "exora7.jpg", 
+    alt: "Exora" 
   },
   {
     src: "hackheaven1.jpg",
