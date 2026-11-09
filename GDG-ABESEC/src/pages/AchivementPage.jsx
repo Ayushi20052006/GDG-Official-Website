@@ -18,7 +18,7 @@ import logo from "/logo.png";
 
 const mockProjects = [
   {
-    id: 5,
+    id: 1,
     title: "PowerMesh",
     description:
       "PowerMesh is a decentralized distributed computing platform that connects users who need computational power with devices that have idle CPU or GPU resources. It offers a cost-effective alternative to traditional cloud computing by enabling secure, peer-to-peer resource sharing using containerized execution and workload isolation.",
@@ -31,7 +31,7 @@ const mockProjects = [
     tech_stack: ["Next.js", "React", "TypeScript", "Fastify", "Node.js", "PostgreSQL", "Docker", "CUDA"]
   },
   {
-    id: 6,
+    id: 2,
     title: "Metrologic",
     description:
       "Evidence-Backed AI for Legal Metrology Inspection: MetroLogic is an AI-assisted inspection platform for checking selected packaged-commodity declarations under Legal Metrology requirements.",
@@ -44,7 +44,7 @@ const mockProjects = [
     tech_stack: ["Python", "FastAPI", "PostgreSQL", "Google Gemini API", "Docker", "JavaScript"]
   },
   {
-    id: 7,
+    id: 3,
     title: "TaxGenie",
     description:
       "TaxGenie is an AI-powered platform simplifying tax management, GST compliance, and financial filing for individuals and small businesses in India.",
@@ -57,7 +57,7 @@ const mockProjects = [
     tech_stack: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "Python", "FastAPI"]
   },
   {
-    id: 8,
+    id: 4,
     title: "ZARA COLLECTION",
     description:
       "ZARA COLLECTION is a responsive fashion website showcasing affordable ethnic wear, including short kurtis, long kurtis, Farsi suits, and layered gowns. Visitors can browse product designs, sizes, and price ranges, read customer reviews, and contact the store to order through WhatsApp",
@@ -70,7 +70,7 @@ const mockProjects = [
     tech_stack: ["React.js", "JavaScript", "HTML5", "CSS3"]
   },
   {
-    id: 1,
+    id: 5,
     title: "AceStudy",
     description:
       "Acestudy is a smart learning platform offering notes, previous year question papers, discussion forums, and a faculty dashboard, enabling organized study, collaboration, and effective academic management.",
@@ -90,7 +90,7 @@ const mockProjects = [
     ],
   },
   {
-    id: 2,
+    id: 6,
     title: "Smart Resume Reviewer",
     description:
       "Smart Resume Reviewer is a web-based application that analyzes resumes and provides structured feedback along with an improved version of the resume. It evaluates content, formatting, and skills presentation, highlighting areas of improvement to help users create clearer and more effective resumes.",
@@ -104,7 +104,7 @@ const mockProjects = [
     tech_stack: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Flask-CORS"],
   },
   {
-    id: 3,
+    id: 7,
     title: "CampusShield",
     description:
       "CampusShield is a secure, anonymous web application designed to facilitate student complaint reporting with comprehensive admin management capabilities. Built with modern web technologies for reliability, security, and user experience.",
@@ -117,7 +117,7 @@ const mockProjects = [
     tech_stack: ["React JS", "Typescript", "Tailwind CSS", "Firebase"],
   },
   {
-    id: 4,
+    id: 8,
     title: "Muvies",
     description:
       "Muvies is a full-stack multimedia platform designed to provide users with seamless access to movies and music in one place. The application allows users to explore movies, watch trailers, and create personalized watchlists. Alongside movies, users can stream and download music, making it a complete entertainment solution.",
