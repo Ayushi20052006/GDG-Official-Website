@@ -37,31 +37,30 @@ function OrganisersAndActingGenerals() {
         github: "https://github.com/Aryan-Kr-Yadav",
       },
     },
-    // to be edited ->
     {
       quote:
-        "Crafting compelling narratives through the lens. As a Creative Director, capturing moments that inspire, engage, and leave a lasting impression.",
-      name: "Riya Jaiswal",
+        "Driven by innovation, grounded in collaboration. Passionate about technology, empowering developers, and fostering a culture of continuous learning and growth.",
+      name: "Riddhima Agarwal",
       designation: "Acting General, GDG ABESEC",
-      src: "OrganiserAndAG'sImages/ActingGeneral3.jpg",
+      src: "OrganiserAndAG'sImages/ActingGeneral2.jpeg",
       socials: {
-        linkedin: "https://www.linkedin.com/in/riyajstar07/",
-        twitter: "https://x.com/riyajstar07",
-        github: "https://github.com/riyajstar07",
+        linkedin: "https://www.linkedin.com/in/riddhimaagarwalbly/",
+        twitter: "https://x.com/Riddhimaagrwal28",
+        github: "https://github.com/RiddhimaAgarwal28",
       },
     },
     {
       quote:
-        "Solving complex problems with precision and insight. As a DSA Specialist, optimizing algorithms and strategies to achieve maximum impact.",
-      name: "Deepanshu Kaushik",
+        "A curious mind with a creative spark, bringing people together, embracing new ideas, and turning possibilities into meaningful action",
+      name: "Krishna Gupta",
       designation: "Acting General, GDG ABESEC",
-      src: "OrganiserAndAG'sImages/ActingGeneral4.jpg",
+      src: "OrganiserAndAG'sImages/ActingGeneral3.png",
       socials: {
-        linkedin: "https://www.linkedin.com/in/deepanshu-kaushik-174059297/",
-        twitter: "https://x.com/Deepanshu25u",
-        github: "https://github.com/Deepanshu-ui-dev",
+        linkedin: "https://www.linkedin.com/in/rollnum21?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        github: "https://github.com/rollnum21",
       },
     },
+      // to be edited ->
     {
       quote:
         "Ensuring seamless collaboration and alignment. As a Strategic Maestro, guiding teams with foresight, clarity, and a vision for excellence.",
