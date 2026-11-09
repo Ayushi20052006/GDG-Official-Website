@@ -7,39 +7,37 @@ function OrganisersAndActingGenerals() {
     {
       quote:
         "Leading with vision and purpose. Inspiring teams as a Team Leader and Community Builder to drive innovation and collaboration impactfully.",
-      name: "Arya Schwetank",
+      name: "Ayushi Jha",
       designation: "Organizer, GDG ABESEC",
-      src: "OrganiserAndAG'sImages/Organiser.jpg",
+      src: "OrganiserAndAG'sImages/Organiser1.png",
       socials: {
-        linkedin: "https://www.linkedin.com/in/aryaschwetank/",
-        twitter: "https://x.com/aryaschwetank",
-        github: "https://github.com/aryaschwetank",
+        linkedin: "https://www.linkedin.com/in/ayushi-jha-482801310/",
+        github: "https://github.com/Ayushi20052006",
       },
     },
     {
       quote:
-        "Connecting ideas to transformative opportunities. As a Tech Strategist, bridging technology and creativity to craft solutions that shape the future.",
-      name: "Ayush Jain",
-      designation: "Acting General, GDG ABESEC",
-      src: "OrganiserAndAG'sImages/ActingGeneral1.jpg",
+        "Jill of all trades, master of some, and student of everything. I love translating curiosity into creation, be it through code, design, or community. Forever collecting perspectives, chasing ideas, and occasionally befriending cats.",
+      name: "Tajalli Us Samad",
+      designation: "Organiser, GDG ABESEC",
+      src: "OrganiserAndAG'sImages/Organiser2.jpg",
       socials: {
-        linkedin: "https://www.linkedin.com/in/urayushjain/",
-        twitter: "https://x.com/urayushjain",
-        github: "https://github.com/URAYUSHJAIN",
+        linkedin: "https://www.linkedin.com/in/tajalli-us-samad",
+        github: "https://github.com/qrstajalli",
       },
     },
     {
       quote:
-        "Transforming code into meaningful impact. As a Developer Extraordinaire, building applications that solve real-world challenges with precision.",
-      name: "Prakhar Tiwari",
+        "Driven by curiosity, defined by innovation. Exploring technology, solving complex problems, and transforming ideas into intelligent solutions that create meaningful impact.",
+      name: "Aryan Kumar Yadav",
       designation: "Acting General, GDG ABESEC",
-      src: "OrganiserAndAG'sImages/ActingGeneral2.jpg",
+      src: "OrganiserAndAG'sImages/ActingGeneral1.jpeg",
       socials: {
-        linkedin: "https://www.linkedin.com/in/prakhar-tiwari1908/",
-        twitter: "https://x.com/tPrakhar19",
-        github: "https://github.com/prakhar-174",
+        linkedin: "https://www.linkedin.com/in/aryan-kumar-yadav/",
+        github: "https://github.com/Aryan-Kr-Yadav",
       },
     },
+    // to be edited ->
     {
       quote:
         "Crafting compelling narratives through the lens. As a Creative Director, capturing moments that inspire, engage, and leave a lasting impression.",
