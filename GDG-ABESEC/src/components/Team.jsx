@@ -712,6 +712,22 @@ const Team = () => {
           }
         }
         @media (max-width: 1200px) {
+          .tm-organiser-container {
+            padding: 0 40px;
+            flex-direction: column;
+            gap: 40px;
+          }
+          .tm-organiser-card-wrapper {
+            flex: 0 1 auto;
+            width: 100%;
+            max-width: 700px;
+          }
+          .tm-organiser-container .tm-section-heading {
+            order: 1;
+          }
+          .tm-organiser-card-wrapper {
+            order: 2;
+          }
           .tm-grid {
             grid-template-columns: 1fr;
             gap: 50px;
