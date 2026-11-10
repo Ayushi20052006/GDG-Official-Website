@@ -13,14 +13,23 @@ import logo from "/logo.png";
 const teamMembers = {
   organiser: [
     {
-      name: "Arya Schwetank",
+      name: "Ayushi Jha",
       role: "Organiser",
       description:
         "The guiding force who keeps the vision bright and the whole team moving together with calm, steady leadership.",
-      img: "/TeamPageImages/Arya Schwetank.jpg",
-      linkedin: "https://www.linkedin.com/in/aryaschwetank/",
-      github: "https://github.com/aryaschwetank",
+      //img: "/TeamPageImages/Arya Schwetank.jpg",
+      linkedin: "https://www.linkedin.com/in/ayushi-jha-482801310/",
+      github: "https://github.com/Ayushi20052006",
     },
+    {
+      name: "Tajalli Us Samad",
+      role: "Organiser",
+      description:
+        "A dedicated leader who brings passion, commitment, and a fresh perspective to every project.",
+      //img: "/TeamPageImages/Tajalli Us Samad.jpg",
+      linkedin: "https://www.linkedin.com/in/tajalli-us-samad",
+      github: "https://github.com/qrstajalli",
+    }
   ],
   actingGenerals: [
     {
@@ -143,49 +152,49 @@ const teamMembers = {
       github: "https://github.com/",
     },
     {
-      name: "Aditya Kumar Vaish",
+      name: "Krish Bansal",
       role: "Overall Coordinator",
       description:
         "The steady anchor who keeps everything balanced, organised and confidently on track.",
-      img: "/TeamPageImages/Aditya Kr. OC.jpg",
-      linkedin: "https://www.linkedin.com/in/aditya-vaish-482a11281/",
-      github: "https://github.com/",
+      //img: "/TeamPageImages/Aditya Kr. OC.jpg",
+      linkedin: "https://www.linkedin.com/in/krish-bansal-662aa13bb?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      github: "https://github.com/krishbansall",
     },
     {
-      name: "Ayushi Singh",
+      name: "Vivek Yadav",
       role: "Production Lead",
       description:
-        "A detail-loving creator who turns tiny elements into polished, perfect moments.",
-      img: "/TeamPageImages/Ayushi Singh.jpg",
-      linkedin: "https://www.linkedin.com/in/ayushisingh29/",
-      github: "https://github.com/",
+        "A detail-loving creator who turns tiny elements into polished, perfect moments and brings a touch of magic to every project.",
+      //img: "/TeamPageImages/Ayushi Singh.jpg",
+      linkedin: "https://www.linkedin.com/in/vivek-yadav-sde",
+      github: "https://github.com/Naivete07",
     },
     {
-      name: "Aadarsh Dhiman",
+      name: "Anjali Chahar",
       role: "Production Lead",
       description:
-        "The cheerful perfectionist who ensures everything looks, feels and flows exactly right.",
-      img: "/TeamPageImages/Aadarsh Dhiman.jpg",
-      linkedin: "https://www.linkedin.com/in/aadarsh-dhiman-5170a634a/",
-      github: "https://github.com/",
+        "The cheerful perfectionist with neverending curiosity who ensures everything looks, feels and flows exactly right.",
+      //img: "/TeamPageImages/Aadarsh Dhiman.jpg",
+      linkedin: "https://www.linkedin.com/in/anjali-chahar-b40a39333",
+      github: "https://github.com/Anjali-chahar",
     },
     {
-      name: "Sakshi Vishnoi",
+      name: "Aryan Kumar Yadav",
       role: "Social Media Lead",
       description:
         "The creative thinker who makes every post feel expressive, aesthetic and full of personality.",
-      img: "/TeamPageImages/Sakshi Vishnoi.jpg",
-      linkedin: "https://www.linkedin.com/in/sakshi-vishnoi-7770b2315/",
-      github: "https://github.com/sakshiv3107",
+      //img: "/TeamPageImages/Sakshi Vishnoi.jpg",
+      linkedin: "https://www.linkedin.com/in/aryan-kumar-yadav/",
+      github: "https://github.com/Aryan-Kr-Yadav",
     },
     {
-      name: "Aditya Kumar Vaish",
+      name: "Gouri Parashar",
       role: "Social Media Lead",
       description:
         "The playful creative who gives social media its spark with clever ideas and bold expression.",
-      img: "/TeamPageImages/Aditya Kr. SM.jpg",
-      linkedin: "https://www.linkedin.com/in/aditya-vaish-482a11281/",
-      github: "https://github.com/",
+      //img: "/TeamPageImages/Aditya Kr. SM.jpg",
+      linkedin: "https://www.linkedin.com/in/gouriparasharghaziabad?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      github: "https://github.com/Gouri313",
     },
   ],
 };
@@ -845,7 +854,7 @@ const Team = () => {
                 transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
                 className="
               inline
-              leading-[1.25]
+              leading-tight
               bg-[linear-gradient(#ffffff,#ffffff)]
               bg-no-repeat
               bg-[position:50%_100%]
