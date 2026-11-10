@@ -60,19 +60,6 @@ function OrganisersAndActingGenerals() {
         github: "https://github.com/rollnum21",
       },
     },
-      // to be edited ->
-    {
-      quote:
-        "Ensuring seamless collaboration and alignment. As a Strategic Maestro, guiding teams with foresight, clarity, and a vision for excellence.",
-      name: "Kshitiz Srivastav",
-      designation: "Acting General, GDG ABESEC",
-      src: "OrganiserAndAG'sImages/ActingGeneral5.jpg",
-      socials: {
-        linkedin: "https://www.linkedin.com/in/kshitiz-srivastav-a87028333/",
-        twitter: "https://x.com/KshitizonX",
-        github: "https://github.com/",
-      },
-    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
