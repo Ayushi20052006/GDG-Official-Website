@@ -665,11 +665,16 @@ const Team = () => {
         }
         .tm-organiser-container {
           max-width: 1800px;
+          width: 100%;
           margin: 0 auto;
           padding: 0;
           display: flex;
           align-items: center;
           flex-direction: row-reverse;
+        }
+        .tm-organiser-container > .tm-section-heading {
+          box-sizing: border-box;
+          min-width: 0;
         }
         .tm-organiser-card-wrapper {
           flex: 0 0 640px;
@@ -724,6 +729,12 @@ const Team = () => {
           }
           .tm-organiser-container .tm-section-heading {
             order: 1;
+            width: 100%;
+            text-align: center;
+          }
+          .tm-organiser-container .tm-section-title {
+            text-align: center;
+            white-space: normal;
           }
           .tm-organiser-card-wrapper {
             order: 2;
@@ -905,13 +916,11 @@ const Team = () => {
 
         <div className="tm-section">
           <div className="tm-organiser-section">
-            <div className="tm-organiser-container">
-              <SectionHeading title="ORGANISER" />
-              <div className="tm-organiser-card-wrapper">
-                {teamMembers.organiser.map((member, i) => (
-                  <TeamMemberCard key={i} member={member} />
-                ))}
-              </div>
+            <SectionHeading title="ORGANISERS" />
+            <div className="tm-grid">
+              {teamMembers.organiser.map((member, i) => (
+                <TeamMemberCard key={i} member={member} />
+              ))}
             </div>
           </div>
 
