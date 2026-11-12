@@ -41,7 +41,7 @@ export const AnimatedTestimonials = ({
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
-                  key={testimonial.src}
+                  key={`${testimonial.name}-${index}`}
                   initial={{
                     opacity: 0,
                     scale: 0.9,
@@ -69,13 +69,15 @@ export const AnimatedTestimonials = ({
                     ease: "easeInOut",
                   }}
                   className="absolute inset-0 origin-bottom">
-                  <img
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center" />
+                  {testimonial.src && (
+                    <img
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      width={500}
+                      height={500}
+                      draggable={false}
+                      className="h-full w-full rounded-3xl object-cover object-center" />
+                  )}
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -107,7 +109,7 @@ export const AnimatedTestimonials = ({
               {testimonials[active].designation}
             </p>
             <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
-              {testimonials[active].quote.split(" ").map((word, index) => (
+              {testimonials[active].quote?.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
                   initial={{

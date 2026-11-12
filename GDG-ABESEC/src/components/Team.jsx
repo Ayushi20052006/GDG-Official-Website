@@ -17,7 +17,7 @@ const teamMembers = {
       role: "Organiser",
       description:
         "The guiding force who keeps the vision bright and the whole team moving together with calm, steady leadership.",
-      //img: "/TeamPageImages/Arya Schwetank.jpg",
+      img: "/TeamPageImages/Ayushi Jha.png",
       linkedin: "https://www.linkedin.com/in/ayushi-jha-482801310/",
       github: "https://github.com/Ayushi20052006",
     },
@@ -26,10 +26,16 @@ const teamMembers = {
       role: "Organiser",
       description:
         "A dedicated leader who brings passion, commitment, and a fresh perspective to every project.",
-      //img: "/TeamPageImages/Tajalli Us Samad.jpg",
+      img: "/TeamPageImages/Tejalli Us Samad.png",
       linkedin: "https://www.linkedin.com/in/tajalli-us-samad",
       github: "https://github.com/qrstajalli",
-    }
+    },
+    {
+      name: "Krish Shrivastva",
+      role: "Organiser",
+      description:
+        "A committed organiser who brings energy, teamwork and fresh ideas to the community.",
+    },
   ],
   actingGenerals: [
     {
@@ -58,24 +64,6 @@ const teamMembers = {
       img: "/TeamPageImages/Riya Jaiswal.jpg",
       linkedin: "https://www.linkedin.com/in/riyajstar07/",
       github: "https://github.com/riyajstar07",
-    },
-    {
-      name: "Kshitiz Srivastav",
-      role: "Acting General",
-      description:
-        "The confident voice that inspires the team, leading with clarity, charm and creative energy.",
-      img: "/TeamPageImages/Kshitiz Srivastav.jpg",
-      linkedin: "https://www.linkedin.com/in/kshitiz-srivastav-a87028333/",
-      github: "https://github.com/",
-    },
-    {
-      name: "Deepanshu Kaushik",
-      role: "Acting General",
-      description:
-        "A dependable organiser who brings structure, discipline and steady momentum to every plan.",
-      img: "/TeamPageImages/Deepanshu Kaushik.jpg",
-      linkedin: "https://www.linkedin.com/in/deepanshu-kaushik-174059297/",
-      github: "https://github.com/Deepanshu-ui-dev",
     },
   ],
   leads: [
@@ -107,6 +95,12 @@ const teamMembers = {
       github: "https://github.com/KeshavKhippal",
     },
     {
+      name: "Vansh Saxena",
+      role: "Technical Lead",
+      description:
+        "A technology enthusiast who brings problem-solving, creativity and a collaborative spirit to every project.",
+    },
+    {
       name: "Anshika Srivastav",
       role: "Promotions Lead",
       description:
@@ -134,6 +128,12 @@ const teamMembers = {
       github: "https://github.com/",
     },
     {
+      name: "Nandini",
+      role: "Events Lead",
+      description:
+        "A dedicated events lead who brings creativity, coordination and energy to every event.",
+    },
+    {
       name: "Ayush Jain",
       role: "Elixir Lead",
       description:
@@ -156,7 +156,7 @@ const teamMembers = {
       role: "Overall Coordinator",
       description:
         "The steady anchor who keeps everything balanced, organised and confidently on track.",
-      //img: "/TeamPageImages/Aditya Kr. OC.jpg",
+      //img: "/TeamPageImages/Krish Bansal.jpg",
       linkedin: "https://www.linkedin.com/in/krish-bansal-662aa13bb?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       github: "https://github.com/krishbansall",
     },
@@ -192,7 +192,7 @@ const teamMembers = {
       role: "Social Media Lead",
       description:
         "The playful creative who gives social media its spark with clever ideas and bold expression.",
-      //img: "/TeamPageImages/Aditya Kr. SM.jpg",
+      img: "/TeamPageImages/Gouri Parashar.png",
       linkedin: "https://www.linkedin.com/in/gouriparasharghaziabad?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       github: "https://github.com/Gouri313",
     },
@@ -226,7 +226,9 @@ const TeamMemberCard = ({ member }) => {
       className="tm-card"
     >
       <div className="tm-card-inner">
-        <img src={member.img} alt={member.name} className="tm-image" />
+        {member.img && (
+          <img src={member.img} alt={member.name} className="tm-image" />
+        )}
         <div className="tm-overlay">
           <div className="tm-content">
             <h3 className="tm-name">{member.name}</h3>
@@ -919,8 +921,11 @@ const Team = () => {
             <SectionHeading title="ORGANISERS" />
             <div className="tm-grid">
               {teamMembers.organiser.map((member, i) => (
-                <TeamMemberCard key={i} member={member} />
+                i < 2 && <TeamMemberCard key={i} member={member} />
               ))}
+            </div>
+            <div className="tm-grid-single">
+              <TeamMemberCard member={teamMembers.organiser[2]} />
             </div>
           </div>
 
@@ -934,11 +939,6 @@ const Team = () => {
             <div className="tm-grid-single">
               <TeamMemberCard member={teamMembers.actingGenerals[2]} />
             </div>
-            <div className="tm-grid">
-              {teamMembers.actingGenerals.slice(3, 5).map((member, i) => (
-                <TeamMemberCard key={i} member={member} />
-              ))}
-            </div>
           </div>
 
           <div className="tm-leads-section">
@@ -948,32 +948,36 @@ const Team = () => {
                 <TeamMemberCard key={i} member={member} />
               ))}
             </div>
-            <div className="tm-grid-single">
-              <TeamMemberCard member={teamMembers.leads[2]} />
-            </div>
             <div className="tm-grid">
-              {teamMembers.leads.slice(3, 5).map((member, i) => (
+              {teamMembers.leads.slice(2, 4).map((member, i) => (
                 <TeamMemberCard key={i} member={member} />
               ))}
             </div>
-            <div className="tm-grid-single">
-              <TeamMemberCard member={teamMembers.leads[5]} />
+            <div className="tm-grid">
+              {teamMembers.leads.slice(4, 6).map((member, i) => (
+                <TeamMemberCard key={i} member={member} />
+              ))}
             </div>
             <div className="tm-grid">
               {teamMembers.leads.slice(6, 8).map((member, i) => (
                 <TeamMemberCard key={i} member={member} />
               ))}
             </div>
+            <div className="tm-grid">
+              {teamMembers.leads.slice(8, 10).map((member, i) => (
+                <TeamMemberCard key={i} member={member} />
+              ))}
+            </div>
             <div className="tm-grid-single">
-              <TeamMemberCard member={teamMembers.leads[8]} />
+              <TeamMemberCard member={teamMembers.leads[10]} />
             </div>
             <div className="tm-grid">
-              {teamMembers.leads.slice(9, 11).map((member, i) => (
+              {teamMembers.leads.slice(11, 13).map((member, i) => (
                 <TeamMemberCard key={i} member={member} />
               ))}
             </div>
             <div className="tm-grid">
-              {teamMembers.leads.slice(11, 13).map((member, i) => (
+              {teamMembers.leads.slice(13, 15).map((member, i) => (
                 <TeamMemberCard key={i} member={member} />
               ))}
             </div>

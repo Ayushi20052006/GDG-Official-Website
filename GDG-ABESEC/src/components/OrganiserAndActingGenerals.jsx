@@ -27,6 +27,16 @@ function OrganisersAndActingGenerals() {
       },
     },
     {
+      quote: "",
+      name: "Krish Srivastava",
+      designation: "Organiser, GDG ABESEC",
+      src: "OrganiserAndAG'sImages/Organiser3.png",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/krish-srivastava-012345678/",
+        github: "https://github.com/krishsrivastava",
+      },
+    },
+    {
       quote:
         "Driven by curiosity, defined by innovation. Exploring technology, solving complex problems, and transforming ideas into intelligent solutions that create meaningful impact.",
       name: "Aryan Kumar Yadav",
