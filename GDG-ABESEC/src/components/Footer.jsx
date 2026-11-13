@@ -6,7 +6,6 @@ import {
   MapPin,
   Linkedin,
   Instagram,
-  Twitter,
 } from "lucide-react";
 
 import { FooterBackgroundGradient } from "./ui/hover-footer";
@@ -51,7 +50,16 @@ function Footer() {
   const socialLinks = [
     { icon: <Linkedin size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/company/gdg-abesec/", hoverColor: "hover:text-[#0A66C2]", },
     { icon: <Instagram size={20} />, label: "Instagram", href: "https://www.instagram.com/gdg.abesec/", hoverColor: "hover:text-[#E4405F]", },
-    { icon: <Twitter size={20} />, label: "Twitter", href: "https://x.com/gdgabesec", hoverColor: "hover:text-[#1DA1F2]", },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      ),
+      label: "X",
+      href: "https://x.com/gdgabesec",
+      hoverColor: "hover:text-white",
+    },
   ];
 
   return (
