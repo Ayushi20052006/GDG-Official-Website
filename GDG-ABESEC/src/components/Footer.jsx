@@ -69,7 +69,7 @@ function Footer() {
 
   return (
     <footer className="bg-[#0F0F11]/10 relative h-fit rounded-3xl overflow-hidden mx-2 my-4 sm:mx-4 sm:my-6 md:m-8">
-      <div className="max-w-7xl mx-auto px-3 py-4 sm:px-4 sm:py-7 lg:p-14 relative z-50 text-gray-300">
+      <div className="max-w-7xl mx-auto px-3 py-4 sm:px-4 sm:py-7 lg:p-8 relative z-50 text-gray-300">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 lg:gap-16 pb-3 md:pb-12">
           {/* Brand section */}
           <div className="flex flex-col space-y-2 md:col-span-2 md:order-1 md:items-center lg:col-span-1 lg:order-none items-center md:items-center lg:items-start text-center lg:text-left mb-6 md:mb-8 lg:mb-0">
@@ -158,7 +158,7 @@ function Footer() {
         <hr className="border-t border-gray-700/80 my-4 sm:my-6" />
 
         {/* Footer bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-3 md:space-y-0 pb-6 relative z-20">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-3 md:space-y-0 pb-6 lg:pb-2 relative z-20">
           {/* Social icons */}
           <div className="flex items-center space-x-4">
             {socialLinks.map(({ icon, label, href, hoverColor }) => (
@@ -183,8 +183,8 @@ function Footer() {
       </div>
 
       {/* Text hover effect - cleanly separated below with proper padding and margin */}
-      <div className="lg:flex hidden h-[22rem] -mt-24 -mb-16 pointer-events-none z-0 items-center justify-center">
-        <TextHoverEffect text="GDG ABESEC" className="pointer-events-auto w-full" />
+      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 pointer-events-none z-0">
+        <TextHoverEffect text="GDG ABESEC" className="pointer-events-auto" />
       </div>
 
       <FooterBackgroundGradient />
