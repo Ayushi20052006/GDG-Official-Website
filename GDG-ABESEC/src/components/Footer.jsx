@@ -37,8 +37,13 @@ function Footer() {
     },
     {
       icon: <Phone size={18} className="text-[#3ca2fa]" />,
-      text: "+91 98388 91188",
-      href: "tel:+919838891188",
+      text: "+91 9870190631",
+      href: "tel:+919870190631",
+    },
+    {
+      icon: <Phone size={18} className="text-[#3ca2fa]" />,
+      text: "+91 8115779988",
+      href: "tel:+918115779988",
     },
     {
       icon: <MapPin size={18} className="text-[#3ca2fa]" />,
@@ -150,12 +155,12 @@ function Footer() {
           </div>
         </div>
 
-        <hr className="border-t border-gray-700 my-3 sm:my-6" />
+        <hr className="border-t border-gray-700/80 my-4 sm:my-6" />
 
         {/* Footer bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-1 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-3 md:space-y-0 pb-6 relative z-20">
           {/* Social icons */}
-          <div className="flex space-x-3">
+          <div className="flex items-center space-x-4">
             {socialLinks.map(({ icon, label, href, hoverColor }) => (
               <a
                 key={label}
@@ -163,7 +168,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className={`text-gray-400 transition-colors ${hoverColor}`}
+                className={`text-gray-400 p-1 rounded-lg hover:bg-white/5 transition-all ${hoverColor}`}
               >
                 {icon}
               </a>
@@ -171,15 +176,15 @@ function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-center md:text-left">
+          <p className="text-center md:text-left text-gray-400 text-xs sm:text-sm">
             &copy; {new Date().getFullYear()} GDG ABESEC. All rights reserved.
           </p>
         </div>
       </div>
 
-      {/* Text hover effect */}
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36 pointer-events-none z-0">
-        <TextHoverEffect text="GDG ABESEC" className="pointer-events-auto" />
+      {/* Text hover effect - cleanly separated below with proper padding and margin */}
+      <div className="lg:flex hidden h-[22rem] -mt-24 -mb-16 pointer-events-none z-0 items-center justify-center">
+        <TextHoverEffect text="GDG ABESEC" className="pointer-events-auto w-full" />
       </div>
 
       <FooterBackgroundGradient />

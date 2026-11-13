@@ -119,8 +119,8 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      content: "+91 98388 91188",
-      subContent: "Mon-Fri, 9am-6pm",
+      content: "+91 9870190631",
+      subContent: "+91 8115779988",
       themeHex: "#34A853",
     },
   ];
