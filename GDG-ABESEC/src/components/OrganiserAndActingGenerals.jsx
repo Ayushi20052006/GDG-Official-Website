@@ -186,7 +186,7 @@ function OrganisersAndActingGenerals() {
         >
           <span className="flex h-2 w-2 rounded-full bg-[#4285F4]" />
           <span className="text-sm sm:text-base tracking-wide">
-            Meet the core team
+            Explore Core Team Members & Department Leads
           </span>
           <span className="text-[#4285F4] text-lg group-hover:translate-x-1.5 transition-transform duration-300">
             →

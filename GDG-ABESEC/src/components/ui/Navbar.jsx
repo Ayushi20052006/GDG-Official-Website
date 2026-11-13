@@ -53,7 +53,6 @@ export const FloatingDock = ({
 
 /* ============================================================
    MOBILE FULLSCREEN HAMBURGER NAVBAR
-   Updated: Accepts className for the toggle button
 ============================================================ */
 
 const FloatingDockMobile = ({ items, className }) => {
@@ -67,7 +66,6 @@ const FloatingDockMobile = ({ items, className }) => {
   return (
     <>
       {/* Toggle Button (☰ / ❌) */}
-      {/* Applied className here so button slides up/down */}
       <div
         className={cn("fixed top-4 right-4 z-[120] block lg:hidden", className)}
       >
@@ -140,7 +138,6 @@ const FloatingDockMobile = ({ items, className }) => {
 
 /* ============================================================
    DESKTOP FLOATING DOCK
-   Updated: Ensure it handles the className prop correctly
 ============================================================ */
 
 const FloatingDockDesktop = ({ items, className }) => {
@@ -150,9 +147,8 @@ const FloatingDockDesktop = ({ items, className }) => {
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      // The className passed from Home will be merged here via cn()
       className={cn(
-        "fixed mx-auto top-14 left-1/2 z-[100] -translate-x-1/2 transform h-16 items-end gap-4 rounded-2xl px-4 pb-3 hidden lg:flex shadow-2xl backdrop-blur-md bg-white/5 border border-white/10",
+        "fixed mx-auto top-14 left-1/2 z-[100] -translate-x-1/2 transform h-16 items-end gap-3.5 rounded-2xl px-4 pb-3 hidden lg:flex shadow-2xl backdrop-blur-md bg-white/5 border border-white/10",
         className,
       )}
     >
@@ -164,10 +160,10 @@ const FloatingDockDesktop = ({ items, className }) => {
 };
 
 /* ============================================================
-   ICON ANIMATION LOGIC (UNCHANGED)
+   ICON TO TEXT MORPHING DOCK ITEM
 ============================================================ */
 
-function IconContainer({ mouseX, title, icon, href }) {
+function IconContainer({ mouseX, title, icon, href, colorClass }) {
   let ref = useRef(null);
 
   let distance = useTransform(mouseX, (val) => {
@@ -175,13 +171,13 @@ function IconContainer({ mouseX, title, icon, href }) {
     return val - bounds.x - bounds.width / 2;
   });
 
-  let width = useSpring(useTransform(distance, [-150, 0, 150], [40, 80, 40]));
-  let height = useSpring(useTransform(distance, [-150, 0, 150], [40, 80, 40]));
+  let width = useSpring(useTransform(distance, [-150, 0, 150], [42, 88, 42]));
+  let height = useSpring(useTransform(distance, [-150, 0, 150], [42, 88, 42]));
   let widthIcon = useSpring(
-    useTransform(distance, [-150, 0, 150], [20, 40, 20]),
+    useTransform(distance, [-150, 0, 150], [20, 36, 20]),
   );
   let heightIcon = useSpring(
-    useTransform(distance, [-150, 0, 150], [20, 40, 20]),
+    useTransform(distance, [-150, 0, 150], [20, 36, 20]),
   );
 
   const [hovered, setHovered] = useState(false);
@@ -193,26 +189,37 @@ function IconContainer({ mouseX, title, icon, href }) {
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-colors duration-300 hover:border-white/40 shadow-lg cursor-pointer overflow-hidden"
       >
-        <AnimatePresence>
-          {hovered && (
-            <motion.div
-              initial={{ opacity: 0, y: 10, x: "-50%" }}
-              animate={{ opacity: 1, y: 0, x: "-50%" }}
-              exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 rounded-md bg-black/80 px-2 py-0.5 text-xs text-white"
+        <AnimatePresence mode="wait" initial={false}>
+          {hovered ? (
+            <motion.span
+              key="text"
+              initial={{ opacity: 0, scale: 0.65 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.65 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              className={cn(
+                "font-bold text-[11px] tracking-wider uppercase text-center px-1 select-none",
+                colorClass,
+              )}
             >
               {title}
+            </motion.span>
+          ) : (
+            <motion.div
+              key="icon"
+              initial={{ opacity: 0, scale: 0.65 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.65 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              style={{ width: widthIcon, height: heightIcon }}
+              className="flex items-center justify-center"
+            >
+              {icon}
             </motion.div>
           )}
         </AnimatePresence>
-        <motion.div
-          style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center"
-        >
-          {icon}
-        </motion.div>
       </motion.div>
     </Link>
   );
@@ -220,7 +227,6 @@ function IconContainer({ mouseX, title, icon, href }) {
 
 /* ============================================================
    NAVBAR EXPORT
-   Updated: Accepts className prop
 ============================================================ */
 
 export default function Navbar({ className }) {
@@ -228,35 +234,40 @@ export default function Navbar({ className }) {
     {
       title: "Home",
       icon: <IconHome className="w-full h-full text-blue-400" />,
+      colorClass: "text-blue-400",
       href: "/",
     },
     {
       title: "About",
       icon: <IconInfoCircle className="w-full h-full text-green-400" />,
+      colorClass: "text-green-400",
       href: "/#about",
     },
     {
       title: "Events",
       icon: <IconCalendarEvent className="w-full h-full text-pink-400" />,
+      colorClass: "text-pink-400",
       href: "/events",
     },
     {
       title: "Team",
       icon: <IconUsers className="w-full h-full text-orange-400" />,
+      colorClass: "text-orange-400",
       href: "/team",
     },
     {
       title: "Showcase",
       icon: <IconAward className="w-full h-full text-purple-400" />,
+      colorClass: "text-purple-400",
       href: "/achievements",
     },
     {
       title: "Contact",
       icon: <IconHelpCircle className="w-full h-full text-yellow-400" />,
+      colorClass: "text-yellow-400",
       href: "/contact",
     },
   ];
 
-  // Pass the className prop down to FloatingDock
   return <FloatingDock items={items} className={className} />;
 }

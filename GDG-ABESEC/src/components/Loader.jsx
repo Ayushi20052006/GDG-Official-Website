@@ -12,13 +12,15 @@ export default function Loader({ onFinish }) {
   const [quoteIndex, setQuoteIndex] = useState(0);
 
   useEffect(() => {
+    // Fast forward quote cycle (every 700ms)
     const quoteInterval = setInterval(() => {
       setQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 2000);
+    }, 700);
 
+    // Snappy splash duration (~2.2s total instead of 6s)
     const timer = setTimeout(() => {
       onFinish();
-    }, 6000); 
+    }, 2200); 
 
     return () => {
       clearInterval(quoteInterval);
@@ -30,7 +32,7 @@ export default function Loader({ onFinish }) {
     <div className="loader-container">
       <img src={logo} alt="GDG Logo" className="loader-logo" />
 
-      <p className="loader-quote">
+      <p className="loader-quote" key={quoteIndex}>
         {quotes[quoteIndex]}
       </p>
     </div>

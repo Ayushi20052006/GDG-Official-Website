@@ -56,23 +56,23 @@ const teamMembers = {
       description:
         "A committed organiser who brings energy, teamwork and fresh ideas to the community.",
       img: "/TeamPageImages/Krish_Srivastava_Org.png",
-      linkedin: "https://www.linkedin.com/in/krish-srivastava-012345678/",
-      github: "https://github.com/krishsrivastava",
+      linkedin: "https://www.linkedin.com/in/krish-srivastava-6468103a8/",
+      github: "https://github.com/Thanos0s",
     },
   ],
   actingGenerals: [
     {
       name: "Aryan Kumar Yadav",
-      role: "Acting General & Social Media Head",
+      role: "Acting General",
       description:
         "Driven by curiosity, defined by innovation. Exploring technology, solving complex problems, and transforming ideas into intelligent solutions that create meaningful impact.",
-      img: "/TeamPageImages/Aryan_Kumar_Yadav_AG.png",
+      img: "/TeamPageImages/Aryan_Kumar_Yadav_AG.jpg",
       linkedin: "https://www.linkedin.com/in/aryan-kumar-yadav/",
       github: "https://github.com/Aryan-Kr-Yadav",
     },
     {
       name: "Riddhima Agarwal",
-      role: "Acting General & Technical Lead",
+      role: "Acting General",
       description:
         "Driven by innovation, grounded in collaboration. Passionate about technology, empowering developers, and fostering a culture of continuous learning and growth.",
       img: "/TeamPageImages/Riddhima_Agarwal_AG.png",
@@ -93,7 +93,7 @@ const teamMembers = {
   overallCoordinator: {
     name: "Krish Bansal",
     role: "Overall Coordinator",
-    description: "Just a fun loving person",
+    description: "Connecting the dots, empowering the community, and growing together.",
     img: "/TeamPageImages/Krish_Bansal_OC.png",
     linkedin: "https://www.linkedin.com/in/krish-bansal-662aa13bb/",
     github: "https://github.com/krishbansall",
@@ -153,7 +153,7 @@ const teamMembers = {
         {
           name: "Rajbir Singh",
           role: "Events Lead",
-          description: "i know ball (idk)",
+          description: "Planning great meetups, bringing people together, and growing with GDG",
           img: "/TeamPageImages/Rajbir_Singh_EL.png",
           linkedin: "https://www.linkedin.com/in/rajbir-singh-438802324",
           github: "https://github.com/rjvrr",
@@ -175,7 +175,7 @@ const teamMembers = {
         {
           name: "Mudit Chaturvedi",
           role: "Promotions Lead",
-          description: "I love anime",
+          description: "Driving engagement, amplifying the community's voice, and growing with GDG & I do love anime!",
           img: "/TeamPageImages/Mudit_Chaturvedi_PL.png",
           linkedin: "https://www.linkedin.com/in/mudit-chaturvedi-42904838b/",
           github: "https://github.com/Mudit1147",
@@ -184,7 +184,7 @@ const teamMembers = {
           name: "Rajshree",
           role: "Promotions Lead",
           description:
-            "My Spotify knows me better than humans, hehehe well I am your cute(🃏)Promotion lead, saath me fun krengeee sblog",
+            "Crafting campaigns and reaching new heights! I am your cute .... Promotions lead & My Spotify knows me better than humans, hehehe",
           img: "/TeamPageImages/Rajshree_PL.png",
           linkedin: "https://www.linkedin.com/in/rajshreesinha/",
           github: "https://github.com/rajshrees093-ai",
@@ -196,7 +196,7 @@ const teamMembers = {
       leads: [
         {
           name: "Aryan Kumar Yadav",
-          role: "Social Media Head",
+          role: "Social Media Lead",
           description:
             "Driven by curiosity, defined by innovation. Exploring technology, solving complex problems, and transforming ideas into intelligent solutions that create meaningful impact.",
           img: "/TeamPageImages/Aryan_Kumar_Yadav_SMH.png",
@@ -206,7 +206,7 @@ const teamMembers = {
         {
           name: "Gouri Parashar",
           role: "Social Media Lead",
-          description: "The Trend Whisperer",
+          description: "I am 'The Trend Whisperer' , Building community online, telling our story!",
           img: "/TeamPageImages/Gouri_Parashar_SML.png",
           linkedin: "https://www.linkedin.com/in/gouriparasharghaziabad/",
           github: "https://github.com/Gouri313",
@@ -220,7 +220,7 @@ const teamMembers = {
         {
           name: "Vivek Yadav",
           role: "Production Lead",
-          description: "Just energy conserving",
+          description: "Bringing ideas to life, delivering excellence",
           img: "/TeamPageImages/Vivek_Yadav_PL.png",
           linkedin: "https://www.linkedin.com/in/vivek-yadav-sde",
           github: "https://github.com/Naivete07",
@@ -325,12 +325,12 @@ const TeamMemberModal = ({ member, onClose }) => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* LEFT SIDE: Nicely Portrayed Image Frame with GDG Accents */}
             <div className="md:col-span-5 flex flex-col items-center">
-              <div className="relative w-full aspect-[4/5] max-h-[420px] rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-neutral-900 group">
+              <div className="relative w-full aspect-[3/4] max-h-[480px] rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-black group flex items-center justify-center">
                 {member.img ? (
                   <img
                     src={member.img}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-[#1b1b22] to-[#09090c] p-6 text-center">
@@ -579,8 +579,9 @@ const TeamMemberCard = ({ member, onSelect }) => {
       <style jsx>{`
         .tm-card {
           width: 100%;
-          max-width: 700px;
-          height: 650px;
+          max-width: 540px;
+          aspect-ratio: 3 / 4;
+          height: auto;
           position: relative;
           will-change: transform, opacity;
           transition: all 0.1s linear;
@@ -590,30 +591,34 @@ const TeamMemberCard = ({ member, onSelect }) => {
           position: relative;
           width: 100%;
           height: 100%;
-          border-radius: 16px;
+          border-radius: 18px;
           overflow: hidden;
-          background: #1a1a1a;
+          background: #000;
           cursor: pointer;
-          transition: transform 0.3s ease, border-color 0.3s ease;
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .tm-card-inner:hover {
           transform: translateY(-8px);
-          border-color: rgba(66, 133, 244, 0.3);
+          border-color: rgba(66, 133, 244, 0.45);
+          box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(66, 133, 244, 0.2);
         }
         .tm-image {
           width: 100%;
           height: 100%;
-          object-fit: cover;
-          object-position: center top;
-          filter: grayscale(100%) brightness(0.65);
+          object-fit: contain;
+          object-position: center;
+          filter: grayscale(100%) brightness(0.85);
           transition:
             filter 0.5s ease,
             transform 0.5s ease;
         }
         .tm-card-inner:hover .tm-image {
           filter: grayscale(0%) brightness(1);
-          transform: scale(1.08);
+          transform: scale(1.03);
         }
         .tm-placeholder {
           width: 100%;
@@ -819,28 +824,39 @@ const TeamMemberCard = ({ member, onSelect }) => {
         }
         @media (max-width: 768px) {
           .tm-card {
-            max-width: 100%;
-            height: 500px;
+            width: 100%;
+            max-width: 440px;
+            aspect-ratio: 3 / 4;
+            height: auto;
+            margin: 0 auto;
           }
           .tm-overlay {
-            padding: 28px;
+            padding: 22px;
           }
           .tm-name {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
           }
           .tm-role {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
           .tm-description {
-            font-size: 0.88rem;
+            font-size: 0.82rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          .tm-click-prompt {
+            margin-bottom: 12px;
+            font-size: 0.72rem;
           }
           .tm-social-link {
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
           }
           .tm-social-icon {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
           }
         }
       `}</style>
@@ -884,13 +900,22 @@ const SectionHeading = ({ title }) => {
         }
         @media (max-width: 768px) {
           .tm-section-heading {
-            padding: 0 20px;
-            margin-bottom: 40px;
+            padding: 0 16px;
+            margin-bottom: 35px;
           }
           .tm-section-title {
-            font-size: clamp(2rem, 8vw, 3rem);
+            font-size: clamp(1.5rem, 6.5vw, 2.8rem);
             text-align: center;
-            white-space: nowrap;
+            white-space: normal;
+            word-break: normal;
+            line-height: 1.15;
+            letter-spacing: 0.04em;
+          }
+        }
+        @media (max-width: 480px) {
+          .tm-section-title {
+            font-size: clamp(1.35rem, 6vw, 2.1rem);
+            letter-spacing: 0.03em;
           }
         }
       `}</style>
@@ -1079,37 +1104,38 @@ const Team = () => {
           display: inline-block;
         }
         .tm-grid {
-          max-width: 1800px;
+          max-width: 1300px;
           margin: 0 auto;
-          padding: 0 60px;
+          padding: 0 40px;
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 60px;
-          row-gap: 50px;
+          gap: 60px 48px;
+          justify-items: center;
         }
         .tm-grid-single {
-          max-width: 1800px;
+          max-width: 1300px;
           margin: 50px auto 0;
-          padding: 0 60px;
+          padding: 0 40px;
           display: flex;
           justify-content: center;
         }
         .tm-grid-single .tm-card {
-          max-width: 700px;
+          max-width: 540px;
         }
         @media (max-width: 1400px) {
           .tm-grid {
-            gap: 50px;
-            row-gap: 40px;
+            max-width: 1150px;
+            gap: 50px 36px;
           }
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 1100px) {
           .tm-grid {
             grid-template-columns: 1fr;
             gap: 50px;
+            justify-items: center;
           }
           .tm-grid-single {
-            padding: 0 60px;
+            padding: 0 40px;
           }
         }
         @media (max-width: 768px) {
@@ -1134,14 +1160,17 @@ const Team = () => {
             letter-spacing: 0.15em;
           }
           .tm-grid {
-            padding: 0 20px;
-            gap: 40px;
-            row-gap: 40px;
+            padding: 0 16px;
+            gap: 36px;
+            row-gap: 36px;
+            width: 100%;
+            justify-items: center;
           }
           .tm-grid-single {
-            padding: 0 20px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            padding: 0 16px;
+            margin-top: 32px;
+            margin-bottom: 32px;
+            width: 100%;
           }
         }
       `}</style>
