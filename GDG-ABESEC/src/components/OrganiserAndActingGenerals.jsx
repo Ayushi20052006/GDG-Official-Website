@@ -91,8 +91,8 @@ function OrganisersAndActingGenerals() {
 
   return (
     <section className="bg-[#0a0a0a] text-white flex flex-col items-center justify-center pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20 px-4 md:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background Decorative GDG Ambient Flares */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-blue-600/10 via-red-600/10 to-green-600/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Decorative Subtle Blue Ambient Flare */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Section Header */}
       <div className="text-center mb-8 sm:mb-12 w-full max-w-4xl relative z-10 px-4">
@@ -102,7 +102,7 @@ function OrganisersAndActingGenerals() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4285F4] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4285F4]"></span>
           </span>
-          <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase bg-gradient-to-r from-blue-400 via-yellow-300 to-green-400 bg-clip-text text-transparent">
+          <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-[#4285F4]">
             GDG ON CAMPUS • ABESEC
           </span>
         </div>
@@ -112,7 +112,7 @@ function OrganisersAndActingGenerals() {
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           Meet the Leadership{" "}
-          <span className="bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853] bg-clip-text text-transparent">
+          <span className="text-[#4285F4]">
             Board
           </span>
         </h2>
@@ -121,13 +121,8 @@ function OrganisersAndActingGenerals() {
           The driving forces steering our community toward innovation, technical excellence, and impactful collaboration.
         </p>
 
-        {/* Google 4-Color Accent Line */}
-        <div className="flex items-center justify-center gap-1.5 mt-5">
-          <span className="h-1 w-6 rounded-full bg-[#4285F4]" />
-          <span className="h-1 w-6 rounded-full bg-[#EA4335]" />
-          <span className="h-1 w-6 rounded-full bg-[#FBBC04]" />
-          <span className="h-1 w-6 rounded-full bg-[#34A853]" />
-        </div>
+        {/* Refined Blue Accent Line */}
+        <div className="w-12 h-1 rounded-full bg-[#4285F4] mx-auto mt-5 shadow-[0_0_12px_rgba(66,133,244,0.6)]" />
       </div>
 
       {/* Quick Interactive Leader Thumbnails Bar (Guaranteed Single Row for all 6 on md+) */}
