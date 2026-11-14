@@ -52,8 +52,8 @@ export const AnimatedTestimonials = ({
       <div className="relative grid grid-cols-1 gap-10 lg:gap-16 md:grid-cols-2 items-center">
         {/* Left Side: Stacking Animated Photos with GDG Glow */}
         <div className="lg:-translate-x-6 relative">
-          {/* Subtle Ambient Google Glow */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-red-500/15 via-yellow-500/15 to-green-500/20 rounded-3xl blur-2xl opacity-60 pointer-events-none" />
+          {/* Subtle Ambient Blue Glow */}
+          <div className="absolute -inset-4 bg-blue-500/15 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
           <div className="relative h-80 sm:h-96 w-full">
             <AnimatePresence>
@@ -104,19 +104,7 @@ export const AnimatedTestimonials = ({
                       {/* Small badge floating on photo */}
                       <div className="absolute bottom-4 left-4 z-10">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/60 backdrop-blur-md text-white border border-white/20 shadow-lg">
-                          <span
-                            className="w-2 h-2 rounded-full"
-                            style={{
-                              backgroundColor:
-                                index % 4 === 0
-                                  ? "#4285F4"
-                                  : index % 4 === 1
-                                  ? "#EA4335"
-                                  : index % 4 === 2
-                                  ? "#FBBC04"
-                                  : "#34A853",
-                            }}
-                          />
+                          <span className="w-2 h-2 rounded-full bg-[#4285F4]" />
                           {testimonial.roleBadge || testimonial.designation?.split(",")[0] || "Leader"}
                         </span>
                       </div>
@@ -222,7 +210,7 @@ export const AnimatedTestimonials = ({
                     aria-label={`Jump to leader ${i + 1}`}
                     className={`transition-all duration-300 rounded-full cursor-pointer ${
                       isActive(i)
-                        ? "w-6 h-2 bg-gradient-to-r from-[#4285F4] to-[#34A853]"
+                        ? "w-6 h-2 bg-[#4285F4] shadow-[0_0_10px_rgba(66,133,244,0.5)]"
                         : "w-2 h-2 bg-white/20 hover:bg-white/50"
                     }`}
                   />
