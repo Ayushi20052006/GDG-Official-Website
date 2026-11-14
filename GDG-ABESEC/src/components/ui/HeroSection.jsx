@@ -124,7 +124,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <div className="h-screen mb-18 bg-gradient-to-br from-[#1a1d18] via-black to-[#1a2a3a] text-[#e6e1d7] font-primary  overflow-hidden relative w-full">
+    <div className="min-h-screen h-auto md:h-screen mb-18 bg-gradient-to-br from-[#1a1d18] via-black to-[#1a2a3a] text-[#e6e1d7] font-primary overflow-hidden relative w-full">
       <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -331,7 +331,7 @@ export function HeroSection() {
       <div className="floating-element" style={{ top: "40%", left: "10%", animationDelay: "6s" }}></div>
       <div className="floating-element" style={{ top: "75%", left: "90%", animationDelay: "6.5s" }}></div>
 
-  <div className="relative z-10 h-full flex flex-col justify-between items-center px-8 py-12 md:px-16 md:py-20">
+  <div className="relative z-10 min-h-screen h-auto md:h-full flex flex-col justify-between items-center px-8 py-12 md:px-16 md:py-20">
   <div className="text-center mt-20 sm:mt-24 md:mt-10">
     <h2
       className="text-xs md:text-sm font-mono font-light mt-10 md:mt-12 uppercase tracking-[0.2em] opacity-80"
@@ -466,7 +466,7 @@ export function HeroSection() {
     ></div>
   </div>
 
-  <div className="text-center max-w-4xl mx-auto relative -mt-10 sm:-mt-12 md:mt-0">
+  <div className="text-center max-w-4xl mx-auto relative mt-0 md:mt-0">
     <h1
       className="text-3xl md:text-5xl lg:text-6xl font-extralight leading-tight tracking-tight"
       style={{ color: colors[50] }}
