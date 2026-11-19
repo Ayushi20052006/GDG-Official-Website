@@ -67,7 +67,10 @@ const FloatingDockMobile = ({ items, className }) => {
     <>
       {/* Toggle Button (☰ / ❌) */}
       <div
-        className={cn("fixed top-4 right-4 z-[120] block lg:hidden", className)}
+        className={cn(
+          "fixed top-4 right-4 sm:top-5 sm:right-5 z-[120] block lg:hidden",
+          className,
+        )}
       >
         <button
           onClick={() => setOpen((prev) => !prev)}

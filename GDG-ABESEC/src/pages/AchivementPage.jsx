@@ -297,17 +297,17 @@ const Showcase = () => {
       <CursorTrail />
 
       {/* ================= BRANDING ================= */}
-      <div className="fixed top-4 left-4 md:top-8 md:left-8 z-20 flex flex-col gap-2 pointer-events-none">
+      <div className="fixed top-4 left-4 sm:top-5 sm:left-5 lg:top-8 lg:left-8 z-[105] flex max-w-[calc(100vw-6rem)] flex-col gap-1 sm:gap-1.5 lg:gap-2 pointer-events-none">
         <div className="flex items-center gap-2 pointer-events-auto">
-           <img
-                                              src={logo}
-                                              className="h-8 w-10 sm:h-12 sm:w-14 md:h-14 md:w-20"
-                                              alt="gdgLogo"
-                                            />
+          <img
+            src={logo}
+            className="h-8 w-10 shrink-0 object-contain sm:h-9 sm:w-12 md:h-10 md:w-14 lg:h-12 lg:w-[4.25rem] xl:h-14 xl:w-20"
+            alt="gdgLogo"
+          />
 
           {/* Google Text */}
           <div
-            className={`flex items-center gap-0.5 font-bold text-xl sm:text-2xl md:text-3xl
+            className={`flex items-center gap-0.5 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl
       transition-all duration-500 ease-out
       ${!showBrandText ? "opacity-0 -translate-x-4" : "opacity-100 translate-x-0"}`}
           >
@@ -322,7 +322,7 @@ const Showcase = () => {
 
         {/* Developer Groups */}
         <div
-          className={`text-white text-sm sm:text-base md:text-lg tracking-wide ml-0.5
+          className={`text-white text-[11px] sm:text-xs md:text-sm lg:text-lg tracking-wide ml-0.5
     transition-all duration-500 ease-out
     ${!showBrandText ? "opacity-0 -translate-y-2" : "opacity-100 translate-y-0"}`}
         >
@@ -341,6 +341,14 @@ const Showcase = () => {
 
           html {
             scroll-behavior: smooth;
+          }
+
+          @media (max-width: 1023px) and (max-height: 700px) {
+            .showcase-hero {
+              align-items: flex-start;
+              padding-top: 8.75rem;
+              padding-bottom: 3rem;
+            }
           }
 
           ::-webkit-scrollbar {
@@ -370,7 +378,7 @@ const Showcase = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden"
+        className="showcase-hero relative min-h-[100svh] flex items-center justify-center overflow-hidden px-4 pt-32 pb-14 sm:px-6 sm:pt-36 sm:pb-16 md:pt-40 lg:pt-44"
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-0 w-full h-px bg-white"></div>
@@ -381,14 +389,14 @@ const Showcase = () => {
           <div className="absolute top-0 left-3/4 h-full w-px bg-white"></div>
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
+        <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
+            className="mb-4 sm:mb-6"
           >
-            <span className="inline-block px-4 py-2 bg-white text-black text-sm font-semibold tracking-wider">
+            <span className="inline-block px-3 py-2 sm:px-4 bg-white text-black text-xs sm:text-sm font-semibold tracking-wider">
               EXCELLENCE IN INNOVATION
             </span>
           </motion.div>
@@ -400,11 +408,12 @@ const Showcase = () => {
             className="
               relative 
               inline-block 
-              px-4
-              text-6xl md:text-8xl lg:text-9xl 
+              px-2 sm:px-4
+              text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl
               font-black 
-              mb-8 
+              mb-6 sm:mb-8
               tracking-tighter
+              leading-none
             "
             style={{
               background: "linear-gradient(135deg, #fff 0%, #888 100%)",
@@ -436,7 +445,7 @@ const Showcase = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-xl text-gray-500 max-w-3xl mx-auto mb-12"
+            className="max-w-3xl mx-auto mb-8 px-2 text-sm leading-relaxed text-gray-500 sm:mb-12 sm:px-6 sm:text-base md:text-lg lg:text-xl"
             style={{
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -450,7 +459,7 @@ const Showcase = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex items-center justify-center gap-2 text-gray-500 text-xs"
+            className="flex items-center justify-center gap-2 text-center text-[10px] text-gray-500 sm:text-xs"
             style={{
               letterSpacing: "0.2em",
               textTransform: "uppercase",
