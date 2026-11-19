@@ -62,13 +62,11 @@ export default function CursorTrail() {
       }
 
       if (cursorRef.current) {
-        cursorRef.current.style.left = `${delayedX.current}px`;
-        cursorRef.current.style.top = `${delayedY.current}px`;
+        cursorRef.current.style.transform = `translate3d(${delayedX.current}px, ${delayedY.current}px, 0) translate(-50%, -50%)`;
       }
 
       if (dotRef.current) {
-        dotRef.current.style.left = `${dotX.current}px`;
-        dotRef.current.style.top = `${dotY.current}px`;
+        dotRef.current.style.transform = `translate3d(${dotX.current}px, ${dotY.current}px, 0) translate(-50%, -50%)`;
       }
 
       animationFrameId = requestAnimationFrame(loop);
@@ -94,7 +92,8 @@ export default function CursorTrail() {
         style={{
           left: 0,
           top: 0,
-          transform: "translate(-50%, -50%)",
+          transform: "translate3d(-100px, -100px, 0)",
+          willChange: "transform",
           filter: "drop-shadow(0px 6px 10px rgba(255, 215, 0, 0.5))",
         }}
       >
@@ -108,7 +107,8 @@ export default function CursorTrail() {
         style={{
           left: 0,
           top: 0,
-          transform: "translate(-50%, -50%)",
+          transform: "translate3d(-100px, -100px, 0)",
+          willChange: "transform",
         }}
       >
         <div className="w-[5px] h-[5px] bg-[#a6cfff] rounded-full" />

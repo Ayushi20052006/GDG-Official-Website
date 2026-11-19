@@ -330,6 +330,7 @@ const TeamMemberModal = ({ member, onClose }) => {
                   <img
                     src={member.img}
                     alt={member.name}
+                    decoding="async"
                     className="w-full h-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
@@ -488,7 +489,13 @@ const TeamMemberCard = ({ member, onSelect }) => {
     >
       <div className="tm-card-inner">
         {member.img ? (
-          <img src={member.img} alt={member.name} className="tm-image" />
+          <img
+            src={member.img}
+            alt={member.name}
+            loading="lazy"
+            decoding="async"
+            className="tm-image"
+          />
         ) : (
           <div className="tm-placeholder">
             <div className="tm-placeholder-content">
@@ -938,22 +945,30 @@ const Team = () => {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let ticking = false;
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const windowHeight = window.innerHeight;
 
-      // Branding Text Logic
-      setShowBrandText(currentScrollY < windowHeight);
+          setShowBrandText((prev) => {
+            const next = currentScrollY < windowHeight;
+            return prev === next ? prev : next;
+          });
 
-      // Navbar Smart Scroll Logic
-      if (currentScrollY < lastScrollY || currentScrollY < 10) {
-        setIsNavbarVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
-        setIsNavbarVisible(false);
+          if (currentScrollY < lastScrollY || currentScrollY < 10) {
+            setIsNavbarVisible((prev) => (prev ? prev : true));
+          } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
+            setIsNavbarVisible((prev) => (!prev ? prev : false));
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });

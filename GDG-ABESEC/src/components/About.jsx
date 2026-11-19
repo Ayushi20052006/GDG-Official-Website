@@ -80,6 +80,8 @@ export default function About() {
                 <img
                   src="/image4ForDomeGal.jpg"
                   alt="Team collaboration"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>
@@ -92,6 +94,8 @@ export default function About() {
                 <img
                   src="/hackheaven5.jpeg"
                   alt="Workshop session"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>
@@ -104,6 +108,8 @@ export default function About() {
                 <img
                   src="techwinter4.jpeg"
                   alt="Innovation hub"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>
@@ -116,6 +122,8 @@ export default function About() {
                 <img
                   src="mtg2.0.jpg"
                   alt="Developer community"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full  h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>

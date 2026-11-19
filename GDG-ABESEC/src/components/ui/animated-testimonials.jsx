@@ -96,6 +96,8 @@ export const AnimatedTestimonials = ({
                         width={500}
                         height={500}
                         draggable={false}
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
                       {/* Gradient overlay for contrast */}

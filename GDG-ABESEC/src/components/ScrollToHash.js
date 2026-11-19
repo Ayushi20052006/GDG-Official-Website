@@ -11,10 +11,14 @@ export default function ScrollToHash() {
         const el = document.getElementById(id);
 
         if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (window.__lenis) {
+            window.__lenis.scrollTo(el, { offset: -20 });
+          } else {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         }
       }
-    }, 100);
+    }, 150);
   }, [pathname, hash]);
 
   return null;

@@ -599,6 +599,8 @@ const ProjectCard = ({ project, index }) => {
                 <img
                   src={project.owner_image}
                   alt={project.owner_name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
                 />
                 <div>
@@ -722,6 +724,8 @@ const ProjectCard = ({ project, index }) => {
               <img
                 src={project.owner_image}
                 alt={project.owner_name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -850,6 +854,8 @@ const AchievementCard = ({ achievement, index }) => {
               <img
                 src={achievement.achiever_image}
                 alt={achievement.achiever_name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -869,6 +875,8 @@ const AchievementCard = ({ achievement, index }) => {
               <img
                 src={achievement.achiever_image}
                 alt={achievement.achiever_name}
+                loading="lazy"
+                decoding="async"
                 className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
               />
               <div>
