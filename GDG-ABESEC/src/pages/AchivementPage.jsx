@@ -23,7 +23,7 @@ const mockProjects = [
     description:
       "PowerMesh is a decentralized distributed computing platform that connects users who need computational power with devices that have idle CPU or GPU resources. It offers a cost-effective alternative to traditional cloud computing by enabling secure, peer-to-peer resource sharing using containerized execution and workload isolation.",
     thumbnail_url: "/projects-imgs/kavya-projects.png",
-    owner_image: "/projects-imgs/kavya.png",
+    owner_image: "/projects-imgs/kavya.webp",
     owner_name: "Kavya Jain",
     github_url: "https://github.com/kavya-jain14/POWERMESH",
     linkedin_url: "https://www.linkedin.com/in/kavya-jain-421119390/",
@@ -61,7 +61,7 @@ const mockProjects = [
     title: "ZARA COLLECTION",
     description:
       "ZARA COLLECTION is a responsive fashion website showcasing affordable ethnic wear, including short kurtis, long kurtis, Farsi suits, and layered gowns. Visitors can browse product designs, sizes, and price ranges, read customer reviews, and contact the store to order through WhatsApp",
-    thumbnail_url: "/projects-imgs/anjali-projects.png",
+    thumbnail_url: "/projects-imgs/anjali-projects.webp",
     owner_image: "/projects-imgs/anjali.jpeg",
     owner_name: "Anjali Dewari",
     github_url: "https://github.com/AnjaliDewari19/Project--Zara",
@@ -74,7 +74,7 @@ const mockProjects = [
     title: "AceStudy",
     description:
       "Acestudy is a smart learning platform offering notes, previous year question papers, discussion forums, and a faculty dashboard, enabling organized study, collaboration, and effective academic management.",
-    thumbnail_url: "/projects-imgs/priyatosh-project.png",
+    thumbnail_url: "/projects-imgs/priyatosh-project.webp",
     owner_image: "/projects-imgs/priyatosh.jpg",
     owner_name: "Priyatosh Kumar",
     github_url: "https://github.com/PriyatoshKumarShahi/Study-Library",
@@ -109,7 +109,7 @@ const mockProjects = [
     description:
       "CampusShield is a secure, anonymous web application designed to facilitate student complaint reporting with comprehensive admin management capabilities. Built with modern web technologies for reliability, security, and user experience.",
     thumbnail_url: "/projects-imgs/anmol-project.png",
-    owner_image: "/projects-imgs/anmol.jpg",
+    owner_image: "/projects-imgs/anmol.webp",
     owner_name: "Anmol Anand",
     github_url: "https://github.com/anandanmol1010/CampusShield",
     linkedin_url: "https://www.linkedin.com/in/anandanmol1010/",
@@ -121,7 +121,7 @@ const mockProjects = [
     title: "Muvies",
     description:
       "Muvies is a full-stack multimedia platform designed to provide users with seamless access to movies and music in one place. The application allows users to explore movies, watch trailers, and create personalized watchlists. Alongside movies, users can stream and download music, making it a complete entertainment solution.",
-    thumbnail_url: "/projects-imgs/tanishq-project.png",
+    thumbnail_url: "/projects-imgs/tanishq-project.webp",
     owner_image: "/projects-imgs/tanishq.jpeg",
     owner_name: "Tanishq Saxena",
     github_url: "https://github.com/Tanishq-7777/miniProjectMoviesSpace",
@@ -227,8 +227,8 @@ const mockAchievements = [
     subtitle: "Winner of Smart India Hackathon 2025",
     description:
       "Won Smart India Hackathon 2025, a prestigious national level innovation competition organized by the Government of India, showcasing excellence in problem-solving and technological innovation.",
-    image_url: "/projects-imgs/anmol-achievement.jpg",
-    achiever_image: "/projects-imgs/anmol.jpg",
+    image_url: "/projects-imgs/anmol-achievement.webp",
+    achiever_image: "/projects-imgs/anmol.webp",
     achiever_name: "Anmol Anand",
     github_url: "https://github.com/anandanmol1010",
     linkedin_url: "https://www.linkedin.com/in/anandanmol1010/",
