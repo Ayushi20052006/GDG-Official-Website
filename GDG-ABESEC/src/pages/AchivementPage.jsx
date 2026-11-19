@@ -469,11 +469,11 @@ const Showcase = () => {
         transition={{ duration: 0.6 }}
         className="sticky top-0 z-[0] bg-black/80 backdrop-blur-xl border-b border-white/10"
       >
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex justify-center gap-2">
+        <div className="container mx-auto px-4 py-4 sm:py-8">
+          <div className="grid w-full max-w-md grid-cols-2 gap-2 mx-auto">
             <button
               onClick={() => setActiveTab("projects")}
-              className={`relative px-10 py-4 text-base font-bold tracking-wider transition-all duration-300 ${
+              className={`relative min-w-0 px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-[0.08em] sm:tracking-wider transition-all duration-300 ${
                 activeTab === "projects"
                   ? "text-black"
                   : "text-white hover:text-gray-300"
@@ -490,7 +490,7 @@ const Showcase = () => {
             </button>
             <button
               onClick={() => setActiveTab("achievements")}
-              className={`relative px-10 py-4 text-base font-bold tracking-wider transition-all duration-300 ${
+              className={`relative min-w-0 px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-[0.08em] sm:tracking-wider transition-all duration-300 ${
                 activeTab === "achievements"
                   ? "text-black"
                   : "text-white hover:text-gray-300"
@@ -531,7 +531,7 @@ const ProjectsSection = ({ projects }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="py-20"
+      className="py-12 sm:py-20"
     >
       <div className="container mx-auto px-4 max-w-7xl">
         {projects.map((project, index) => (
@@ -557,14 +557,14 @@ const ProjectCard = ({ project, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, delay: index * 0.1 }}
-        className="mb-32 last:mb-40"
+        className="mb-20 sm:mb-32 last:mb-28 sm:last:mb-40"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div className="lg:hidden flex items-center gap-4 mb-6">
-            <span className="text-6xl font-black text-white/10">
+          <div className="lg:hidden flex items-center gap-3 sm:gap-4 mb-6">
+            <span className="text-5xl sm:text-6xl font-black text-white/10">
               0{project.id}
             </span>
             <div className="flex-1 h-px bg-white/20"></div>
@@ -591,7 +591,7 @@ const ProjectCard = ({ project, index }) => {
                 <div className="flex-1 h-px bg-white/20"></div>
               </div>
 
-              <h3 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tight break-words">
                 {project.title}
               </h3>
 
@@ -672,7 +672,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
 
           <motion.div
-            className={`relative h-[450px] order-2 ${
+            className={`relative h-auto aspect-[16/10] sm:aspect-video lg:aspect-auto lg:h-[450px] order-2 ${
               index % 2 === 0 ? "lg:order-1" : "lg:order-2"
             }`}
           >
@@ -687,7 +687,9 @@ const ProjectCard = ({ project, index }) => {
               <motion.img
                 src={project.thumbnail_url}
                 alt={project.title}
-                className="w-full h-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-contain lg:object-cover object-center bg-black"
                 animate={{ scale: imageHovered ? 1.05 : 1 }}
                 transition={{ duration: 0.6 }}
               />
@@ -716,7 +718,7 @@ const ProjectCard = ({ project, index }) => {
             </motion.a>
 
             <motion.div
-              className="absolute top-3 left-3 w-25 h-25 overflow-hidden bg-zinc-900 border-4 border-black rounded-[50%]  shadow-2xl cursor-pointer"
+              className="absolute top-3 left-3 w-20 h-20 sm:w-24 sm:h-24 overflow-hidden bg-zinc-900 border-4 border-black rounded-full shadow-2xl cursor-pointer"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
               onClick={() => setIsImageEnlarged(true)}
@@ -757,13 +759,13 @@ const ProjectCard = ({ project, index }) => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-2xl max-h-[80vh] rounded-lg bg-cover overflow-hidden"
+              className="relative w-full max-w-2xl max-h-[85vh] rounded-lg bg-black overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={project.owner_image}
                 alt={project.owner_name}
-                className="w-full h-[500px] object-cover object-center"
+                className="w-full h-auto max-h-[85vh] object-contain object-center"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                 <p className="text-xs font-semibold tracking-wider text-gray-400 mb-1">
@@ -786,10 +788,10 @@ const AchievementsSection = ({ achievements }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="py-20"
+      className="py-12 sm:py-20"
     >
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
           {achievements.map((achievement, index) => (
             <AchievementCard
               key={achievement.id}
@@ -822,7 +824,7 @@ const AchievementCard = ({ achievement, index }) => {
       >
         <div className="relative h-full bg-zinc-950 overflow-hidden flex flex-col">
           {/* Image section */}
-          <div className="relative h-64 overflow-hidden">
+          <div className="relative h-auto aspect-[4/3] sm:aspect-[16/10] md:h-64 md:aspect-auto overflow-hidden bg-black">
             <div
               className="relative w-full h-full overflow-hidden cursor-pointer"
               onMouseEnter={() => setImageHovered(true)}
@@ -831,7 +833,9 @@ const AchievementCard = ({ achievement, index }) => {
               <motion.img
                 src={achievement.image_url}
                 alt={achievement.title}
-                className="w-full h-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-contain object-center"
                 animate={{ scale: imageHovered ? 1.1 : 1 }}
                 transition={{ duration: 0.6 }}
               />
@@ -862,8 +866,8 @@ const AchievementCard = ({ achievement, index }) => {
           </div>
 
           {/* Content */}
-          <div className="p-8 bg-zinc-950 flex-1 flex flex-col">
-            <h3 className="text-2xl font-black mb-2 tracking-tight">
+          <div className="p-5 sm:p-8 bg-zinc-950 flex-1 flex flex-col">
+            <h3 className="text-xl sm:text-2xl font-black mb-2 tracking-tight break-words">
               {achievement.title}
             </h3>
 
@@ -973,7 +977,7 @@ const AchievementCard = ({ achievement, index }) => {
                 className="w-full h-auto max-h-[80vh] object-contain"
               />
 
-              <div className="absolute bottom-4 left-16 z-10">
+              <div className="absolute bottom-4 left-4 sm:left-16 z-10">
                 <p className="text-xs font-semibold tracking-wider text-gray-500">
                   ACHIEVED BY
                 </p>
