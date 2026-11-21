@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import img1 from "../assets/img1.png";
 import cloud from "../assets/cloud.png";
 import drive from "../assets/drive.png";
@@ -49,58 +49,23 @@ const FloatingAppIcon = ({
 
   useEffect(() => {
     if (isVisible) {
-      controls
-        .start({
-          x: `${position.x}vw`,
-          y: `${position.y}vh`,
-          scale: [0, 1.15, 1],
-          opacity: 1,
-          transition: {
-            duration: 0.8,
-            delay: delay,
-            ease: [0.68, -0.55, 0.265, 1.55],
-            scale: { duration: 0.8, times: [0, 0.6, 1] }
-          }
-        })
-        .then(() => {
-          const randomPath = Array.from({ length: 6 }, () => ({
-            x: position.x + (Math.random() - 0.5) * position.floatRadius * 2,
-            y: position.y + (Math.random() - 0.5) * position.floatRadius * 2
-          }));
-
-          controls.start({
-            x: [
-              `${position.x}vw`,
-              `${randomPath[0].x}vw`,
-              `${randomPath[1].x}vw`,
-              `${randomPath[2].x}vw`,
-              `${randomPath[3].x}vw`,
-              `${randomPath[4].x}vw`,
-              `${randomPath[5].x}vw`,
-              `${position.x}vw`
-            ],
-            y: [
-              `${position.y}vh`,
-              `${randomPath[0].y}vh`,
-              `${randomPath[1].y}vh`,
-              `${randomPath[2].y}vh`,
-              `${randomPath[3].y}vh`,
-              `${randomPath[4].y}vh`,
-              `${randomPath[5].y}vh`,
-              `${position.y}vh`
-            ],
-            rotate: [0, 3, -3, 2, -2, 3, -3, 0],
-            scale: [1, 0.96, 1.04, 0.98, 1.02, 0.97, 1.03, 1],
-            transition: {
-              duration: position.floatDuration,
-              repeat: Infinity,
-              ease: "easeInOut",
-              times: [0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84, 1]
-            }
-          });
-        });
+      controls.start({
+        x: `${position.x}vw`,
+        y: `${position.y}vh`,
+        scale: [0, 1.1, 1],
+        opacity: 1,
+        transition: {
+          duration: 0.7,
+          delay: delay,
+          ease: "easeOut",
+        }
+      });
     }
-  }, [isVisible, controls, position, delay]);
+  }, [isVisible, controls, position.x, position.y, delay]);
+
+  // Unique float animation timing per icon using GPU-accelerated CSS
+  const floatDuration = 4 + (index % 4) * 0.8;
+  const floatDelay = (index * 0.35) % 2;
 
   return (
     <motion.div
@@ -108,18 +73,28 @@ const FloatingAppIcon = ({
       style={{
         left: "50%",
         top: "50%",
-        transform: "translate(-50%, -50%)",
         backgroundColor: "#0a0a0a",
-        borderColor: position.borderColor
+        borderColor: position.borderColor,
+        willChange: "transform",
       }}
       initial={{ x: 0, y: 0, scale: 0, opacity: 0 }}
       animate={controls}
     >
-      <img
-        src={iconSrc}
-        alt={iconAlt || `App Icon ${index + 1}`}
-        className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 object-contain"
-      />
+      <div
+        className="w-full h-full flex items-center justify-center"
+        style={{
+          animation: isVisible ? `gentleFloat ${floatDuration}s ease-in-out ${floatDelay}s infinite alternate` : "none",
+          willChange: "transform",
+        }}
+      >
+        <img
+          src={iconSrc}
+          alt={iconAlt || `App Icon ${index + 1}`}
+          loading="lazy"
+          decoding="async"
+          className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 object-contain"
+        />
+      </div>
     </motion.div>
   );
 };
@@ -127,14 +102,14 @@ const FloatingAppIcon = ({
 const StatItem = ({ headline, number, suffix, delay, isVisible }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 80, scale: 0.8 }}
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={
         isVisible
           ? { opacity: 1, y: 0, scale: 1 }
-          : { opacity: 0, y: 80, scale: 0.8 }
+          : { opacity: 0, y: 50, scale: 0.9 }
       }
       transition={{
-        duration: 1,
+        duration: 0.8,
         delay: delay,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
@@ -146,7 +121,7 @@ const StatItem = ({ headline, number, suffix, delay, isVisible }) => {
           style={{ fontFamily: "'Inter', sans-serif" }}
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: delay + 0.2 }}
+          transition={{ duration: 0.6, delay: delay + 0.15 }}
         >
           {headline}
         </motion.p>
@@ -171,13 +146,7 @@ const StatItem = ({ headline, number, suffix, delay, isVisible }) => {
 
 export default function StatsSection() {
   const sectionRef = useRef(null);
-  const containerRef = useRef(null);
-  const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.3 });
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
+  const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.25 });
 
   const googleColors = [
     { borderColor: "#4285F4" },
@@ -204,16 +173,16 @@ export default function StatsSection() {
   ];
 
   const iconPositions = [
-    { x: -40, y: -35, floatRadius: 5, floatDuration: 30, ...googleColors[0] },
-    { x: -25, y: -45, floatRadius: 4.5, floatDuration: 31, ...googleColors[1] },
-    { x: 20, y: -10, floatRadius: 5.5, floatDuration: 30.5, ...googleColors[2] },
-    { x: 30, y: -35, floatRadius: 4.8, floatDuration: 31.5, ...googleColors[3] },
-    { x: 30, y: 15, floatRadius: 5.2, floatDuration: 30.2, ...googleColors[4] },
-    { x: 10, y: -35, floatRadius: 4.7, floatDuration: 31.2, ...googleColors[5] },
-    { x: -40, y: 0, floatRadius: 5.3, floatDuration: 30.8, ...googleColors[6] },
-    { x: -30, y: 28, floatRadius: 4.9, floatDuration: 31.8, ...googleColors[7] },
-    { x: 18, y: 30, floatRadius: 5.1, floatDuration: 30.4, ...googleColors[0] },
-    { x: -7, y: 35, floatRadius: 4.6, floatDuration: 31.4, ...googleColors[1] }
+    { x: -40, y: -35, ...googleColors[0] },
+    { x: -25, y: -45, ...googleColors[1] },
+    { x: 20, y: -10, ...googleColors[2] },
+    { x: 30, y: -35, ...googleColors[3] },
+    { x: 30, y: 15, ...googleColors[4] },
+    { x: 10, y: -35, ...googleColors[5] },
+    { x: -40, y: 0, ...googleColors[6] },
+    { x: -30, y: 28, ...googleColors[7] },
+    { x: 18, y: 30, ...googleColors[0] },
+    { x: -7, y: 35, ...googleColors[1] }
   ];
 
   const stats = [
@@ -223,7 +192,20 @@ export default function StatsSection() {
   ];
 
   return (
-    <div ref={containerRef} className="relative min-h-screen hidden md:block">
+    <div className="relative min-h-screen hidden md:block">
+      <style>{`
+        @keyframes gentleFloat {
+          0% {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+          }
+          50% {
+            transform: translate3d(0, -10px, 0) rotate(2deg);
+          }
+          100% {
+            transform: translate3d(0, 8px, 0) rotate(-2deg);
+          }
+        }
+      `}</style>
       <section
         ref={sectionRef}
         className="sticky top-0 min-h-screen bg-[#0a0a0a] py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden flex items-center justify-center"
@@ -233,7 +215,7 @@ export default function StatsSection() {
             <FloatingAppIcon
               key={index}
               position={position}
-              delay={0.3 + index * 0.12}
+              delay={0.2 + index * 0.08}
               isVisible={isVisible}
               index={index}
               iconSrc={appIcons[index]?.src || appIcons[0].src}
@@ -249,7 +231,7 @@ export default function StatsSection() {
               headline={stat.headline}
               number={stat.number}
               suffix={stat.suffix}
-              delay={0.8 + index * 0.3}
+              delay={0.5 + index * 0.2}
               isVisible={isVisible}
             />
           ))}

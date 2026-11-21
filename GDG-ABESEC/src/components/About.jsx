@@ -106,7 +106,7 @@ export default function About() {
                 data-aos-delay="300"
               >
                 <img
-                  src="techwinter4.jpeg"
+                  src="/techwinter4.jpeg"
                   alt="Innovation hub"
                   loading="lazy"
                   decoding="async"
@@ -120,7 +120,7 @@ export default function About() {
                 data-aos-delay="400"
               >
                 <img
-                  src="mtg2.0.jpg"
+                  src="/mtg2.0.jpg"
                   alt="Developer community"
                   loading="lazy"
                   decoding="async"

@@ -148,7 +148,7 @@ const FloatingDockDesktop = ({ items, className }) => {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "fixed mx-auto top-14 left-1/2 z-[100] -translate-x-1/2 transform h-16 items-end gap-3.5 rounded-2xl px-4 pb-3 hidden lg:flex shadow-2xl backdrop-blur-md bg-white/5 border border-white/10",
+        "fixed mx-auto top-6 left-1/2 z-[100] -translate-x-1/2 transform h-14 items-center gap-2 rounded-full px-3 hidden lg:flex shadow-2xl backdrop-blur-md bg-white/5 border border-white/10",
         className,
       )}
     >
@@ -171,13 +171,24 @@ function IconContainer({ mouseX, title, icon, href, colorClass }) {
     return val - bounds.x - bounds.width / 2;
   });
 
-  let width = useSpring(useTransform(distance, [-150, 0, 150], [42, 88, 42]));
-  let height = useSpring(useTransform(distance, [-150, 0, 150], [42, 88, 42]));
+  // Calm, subtle magnification: base 44px, slight hover elevation to 52px
+  let width = useSpring(useTransform(distance, [-80, 0, 80], [44, 52, 44]), {
+    mass: 0.1,
+    stiffness: 180,
+    damping: 14,
+  });
+  let height = useSpring(useTransform(distance, [-80, 0, 80], [44, 52, 44]), {
+    mass: 0.1,
+    stiffness: 180,
+    damping: 14,
+  });
   let widthIcon = useSpring(
-    useTransform(distance, [-150, 0, 150], [20, 36, 20]),
+    useTransform(distance, [-80, 0, 80], [20, 24, 20]),
+    { mass: 0.1, stiffness: 180, damping: 14 },
   );
   let heightIcon = useSpring(
-    useTransform(distance, [-150, 0, 150], [20, 36, 20]),
+    useTransform(distance, [-80, 0, 80], [20, 24, 20]),
+    { mass: 0.1, stiffness: 180, damping: 14 },
   );
 
   const [hovered, setHovered] = useState(false);
@@ -189,18 +200,18 @@ function IconContainer({ mouseX, title, icon, href, colorClass }) {
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-colors duration-300 hover:border-white/40 shadow-lg cursor-pointer overflow-hidden"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-colors duration-200 hover:border-white/50 hover:bg-white/15 shadow-md cursor-pointer overflow-hidden"
       >
         <AnimatePresence mode="wait" initial={false}>
           {hovered ? (
             <motion.span
               key="text"
-              initial={{ opacity: 0, scale: 0.65 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.65 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.12, ease: "easeOut" }}
               className={cn(
-                "font-bold text-[11px] tracking-wider uppercase text-center px-1 select-none",
+                "font-semibold text-[10px] tracking-wide uppercase text-center px-1 select-none",
                 colorClass,
               )}
             >
@@ -209,10 +220,10 @@ function IconContainer({ mouseX, title, icon, href, colorClass }) {
           ) : (
             <motion.div
               key="icon"
-              initial={{ opacity: 0, scale: 0.65 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.65 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.12, ease: "easeOut" }}
               style={{ width: widthIcon, height: heightIcon }}
               className="flex items-center justify-center"
             >
