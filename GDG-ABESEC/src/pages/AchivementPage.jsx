@@ -253,8 +253,34 @@ const mockAchievements = [
   },
 ];
 
+// Safe date formatting: "12-01-2025" style strings can parse as Invalid Date
+// on some browsers, so fall back to the raw string instead of showing "Invalid Date".
+const formatDate = (value) => {
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return value;
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
+// True only on devices with a real mouse/trackpad (no cursor trail on touch).
+const useFinePointer = () => {
+  const [fine, setFine] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setFine(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return fine;
+};
+
 const Showcase = () => {
   const [activeTab, setActiveTab] = useState("projects");
+  const hasFinePointer = useFinePointer();
 
   // 1. Branding Visibility State (Visible ONLY when scroll < windowHeight)
   const [showBrandText, setShowBrandText] = useState(true);
@@ -294,20 +320,25 @@ const Showcase = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <ScrollProgressBar />
-      <CursorTrail />
+      {hasFinePointer && <CursorTrail />}
 
       {/* ================= BRANDING ================= */}
-      <div className="fixed top-4 left-4 md:top-8 md:left-8 z-20 flex flex-col gap-2 pointer-events-none">
+      {/* On mobile the whole brand block fades out after the hero so it never covers cards */}
+      <div
+        className={`fixed top-3 left-3 sm:top-4 sm:left-4 md:top-8 md:left-8 z-20 flex flex-col gap-1 sm:gap-2 pointer-events-none transition-opacity duration-500 ${
+          !showBrandText ? "max-md:opacity-0 max-md:invisible" : "opacity-100"
+        }`}
+      >
         <div className="flex items-center gap-2 pointer-events-auto">
-           <img
-                                              src={logo}
-                                              className="h-8 w-10 sm:h-12 sm:w-14 md:h-14 md:w-20"
-                                              alt="gdgLogo"
-                                            />
+          <img
+            src={logo}
+            className="h-8 w-10 sm:h-12 sm:w-14 md:h-14 md:w-20 object-contain"
+            alt="gdgLogo"
+          />
 
           {/* Google Text */}
           <div
-            className={`flex items-center gap-0.5 font-bold text-xl sm:text-2xl md:text-3xl
+            className={`flex items-center gap-0.5 font-bold text-lg sm:text-2xl md:text-3xl
       transition-all duration-500 ease-out
       ${!showBrandText ? "opacity-0 -translate-x-4" : "opacity-100 translate-x-0"}`}
           >
@@ -322,7 +353,7 @@ const Showcase = () => {
 
         {/* Developer Groups */}
         <div
-          className={`text-white text-sm sm:text-base md:text-lg tracking-wide ml-0.5
+          className={`text-white text-xs sm:text-base md:text-lg tracking-wide ml-0.5
     transition-all duration-500 ease-out
     ${!showBrandText ? "opacity-0 -translate-y-2" : "opacity-100 translate-y-0"}`}
         >
@@ -370,7 +401,7 @@ const Showcase = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden"
+        className="relative min-h-[100svh] flex items-center justify-center px-4 overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-0 w-full h-px bg-white"></div>
@@ -386,9 +417,9 @@ const Showcase = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
+            className="mb-4 sm:mb-6"
           >
-            <span className="inline-block px-4 py-2 bg-white text-black text-sm font-semibold tracking-wider">
+            <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-white text-black text-xs sm:text-sm font-semibold tracking-wider">
               EXCELLENCE IN INNOVATION
             </span>
           </motion.div>
@@ -400,10 +431,10 @@ const Showcase = () => {
             className="
               relative 
               inline-block 
-              px-4
-              text-6xl md:text-8xl lg:text-9xl 
+              px-2 sm:px-4
+              text-5xl sm:text-7xl md:text-8xl lg:text-9xl 
               font-black 
-              mb-8 
+              mb-6 sm:mb-8 
               tracking-tighter
             "
             style={{
@@ -414,29 +445,29 @@ const Showcase = () => {
             }}
           >
             <motion.span
-    initial={{ backgroundSize: "0% 4px" }}
-    animate={{ backgroundSize: "100% 4px" }}
-    transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
-    className="
-      inline
-      leading-[1.25]
-      bg-[linear-gradient(#ffffff,#ffffff)]
-      bg-no-repeat
-      bg-[position:50%_100%]
-      pb-1
-      [box-decoration-break:clone]
-      [-webkit-box-decoration-break:clone]
-    "
-  >
-    SHOWCASE
-  </motion.span>
+              initial={{ backgroundSize: "0% 4px" }}
+              animate={{ backgroundSize: "100% 4px" }}
+              transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+              className="
+                inline
+                leading-[1.25]
+                bg-[linear-gradient(#ffffff,#ffffff)]
+                bg-no-repeat
+                bg-[position:50%_100%]
+                pb-1
+                [box-decoration-break:clone]
+                [-webkit-box-decoration-break:clone]
+              "
+            >
+              SHOWCASE
+            </motion.span>
           </motion.h1>
 
           <motion.p
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-xl text-gray-500 max-w-3xl mx-auto mb-12"
+            className="text-sm sm:text-base md:text-xl text-gray-500 max-w-3xl mx-auto mb-8 sm:mb-12 px-2"
             style={{
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -469,11 +500,11 @@ const Showcase = () => {
         transition={{ duration: 0.6 }}
         className="sticky top-0 z-[0] bg-black/80 backdrop-blur-xl border-b border-white/10"
       >
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex justify-center gap-2">
+        <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
+          <div className="grid grid-cols-2 sm:flex sm:justify-center gap-2">
             <button
               onClick={() => setActiveTab("projects")}
-              className={`relative px-10 py-4 text-base font-bold tracking-wider transition-all duration-300 ${
+              className={`relative px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-wider transition-all duration-300 ${
                 activeTab === "projects"
                   ? "text-black"
                   : "text-white hover:text-gray-300"
@@ -490,7 +521,7 @@ const Showcase = () => {
             </button>
             <button
               onClick={() => setActiveTab("achievements")}
-              className={`relative px-10 py-4 text-base font-bold tracking-wider transition-all duration-300 ${
+              className={`relative px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-wider transition-all duration-300 ${
                 activeTab === "achievements"
                   ? "text-black"
                   : "text-white hover:text-gray-300"
@@ -531,21 +562,19 @@ const ProjectsSection = ({ projects }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="py-20"
+      className="py-10 sm:py-20"
     >
       <div className="container mx-auto px-4 max-w-7xl">
         {projects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </div>
-      {/* <Footer /> */}
     </motion.div>
   );
 };
 
 const ProjectCard = ({ project, index }) => {
   const cardRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
   const [imageHovered, setImageHovered] = useState(false);
   const [isImageEnlarged, setIsImageEnlarged] = useState(false);
 
@@ -555,26 +584,23 @@ const ProjectCard = ({ project, index }) => {
         ref={cardRef}
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.8, delay: index * 0.1 }}
-        className="mb-32 last:mb-40"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        className="mb-16 sm:mb-24 lg:mb-32 last:mb-20 lg:last:mb-40"
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div className="lg:hidden flex items-center gap-4 mb-6">
-            <span className="text-6xl font-black text-white/10">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
+          {/* Mobile-only number row */}
+          <div className="lg:hidden flex items-center gap-4">
+            <span className="text-4xl sm:text-6xl font-black text-white/10">
               0{project.id}
             </span>
             <div className="flex-1 h-px bg-white/20"></div>
-            <span className="text-sm font-semibold tracking-wider text-gray-500">
-              {project.year}
-            </span>
           </div>
 
+          {/* TEXT (below the image on mobile) */}
           <div
-            className={`flex flex-col justify-between order-1 ${
+            className={`min-w-0 flex flex-col justify-between order-2 ${
               index % 2 === 0 ? "lg:order-2" : "lg:order-1"
             }`}
           >
@@ -591,37 +617,39 @@ const ProjectCard = ({ project, index }) => {
                 <div className="flex-1 h-px bg-white/20"></div>
               </div>
 
-              <h3 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4 tracking-tight break-words">
                 {project.title}
               </h3>
 
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
                 <img
                   src={project.owner_image}
                   alt={project.owner_name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover object-top border-2 border-white/20 shrink-0"
                 />
-                <div>
-                  <p className="text-xs font-semibold tracking-wider text-gray-500">
+                <div className="min-w-0">
+                  <p className="text-[10px] sm:text-xs font-semibold tracking-wider text-gray-500">
                     CREATED BY
                   </p>
-                  <p className="text-lg font-bold">{project.owner_name}</p>
+                  <p className="text-base sm:text-lg font-bold truncate">
+                    {project.owner_name}
+                  </p>
                 </div>
               </div>
 
-              <p className="text-gray-400 text-base leading-relaxed mb-8">
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
                 {project.description}
               </p>
 
-              <div className="mb-10">
-                <p className="text-xs font-semibold tracking-wider text-gray-500 mb-4">
+              <div className="mb-6 sm:mb-10">
+                <p className="text-[10px] sm:text-xs font-semibold tracking-wider text-gray-500 mb-3 sm:mb-4">
                   TECH STACK
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {project.tech_stack.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-2 bg-white text-black text-sm font-semibold tracking-wider"
+                      className="px-2.5 py-1.5 sm:px-3 sm:py-2 bg-white text-black text-xs sm:text-sm font-semibold tracking-wide sm:tracking-wider"
                     >
                       {tech}
                     </span>
@@ -629,7 +657,7 @@ const ProjectCard = ({ project, index }) => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <motion.a
                   href={project.deployed_url}
                   target="_blank"
@@ -638,6 +666,7 @@ const ProjectCard = ({ project, index }) => {
                   whileTap={{ scale: 0.95 }}
                   className="p-3 bg-white/5 hover:bg-white/10 transition-all duration-300 group"
                   title="View Live Project"
+                  aria-label="View live project"
                 >
                   <ExternalLink className="w-5 h-5 text-white group-hover:text-white transition-colors" />
                 </motion.a>
@@ -650,6 +679,7 @@ const ProjectCard = ({ project, index }) => {
                   whileTap={{ scale: 0.95 }}
                   className="p-3 bg-white/5 hover:bg-purple-600 transition-all duration-300 group"
                   title="View on GitHub"
+                  aria-label="View on GitHub"
                 >
                   <Github className="w-5 h-5 text-white" />
                 </motion.a>
@@ -662,6 +692,7 @@ const ProjectCard = ({ project, index }) => {
                   whileTap={{ scale: 0.95 }}
                   className="p-3 bg-white/5 hover:bg-blue-600 transition-all duration-300 group"
                   title="View on LinkedIn"
+                  aria-label="View on LinkedIn"
                 >
                   <Linkedin className="w-5 h-5 text-white" />
                 </motion.a>
@@ -669,8 +700,10 @@ const ProjectCard = ({ project, index }) => {
             </motion.div>
           </div>
 
+          {/* IMAGE (first on mobile). Natural height below lg = no cropping.
+              Fixed 450px crop only on desktop where the two-column layout needs it. */}
           <motion.div
-            className={`relative h-[450px] order-2 ${
+            className={`relative min-w-0 order-1 lg:h-[450px] ${
               index % 2 === 0 ? "lg:order-1" : "lg:order-2"
             }`}
           >
@@ -678,14 +711,14 @@ const ProjectCard = ({ project, index }) => {
               href={project.deployed_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block h-full overflow-hidden bg-zinc-900 group cursor-pointer"
+              className="relative block w-full lg:h-full overflow-hidden bg-zinc-900 group cursor-pointer"
               onMouseEnter={() => setImageHovered(true)}
               onMouseLeave={() => setImageHovered(false)}
             >
               <motion.img
                 src={project.thumbnail_url}
                 alt={project.title}
-                className="w-full h-full object-cover object-center"
+                className="block w-full h-auto lg:h-full object-cover object-center"
                 animate={{ scale: imageHovered ? 1.05 : 1 }}
                 transition={{ duration: 0.6 }}
               />
@@ -694,7 +727,7 @@ const ProjectCard = ({ project, index }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: imageHovered ? 1 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-black/60 flex items-center justify-center"
+                className="absolute inset-0 bg-black/60 hidden lg:flex items-center justify-center pointer-events-none"
               >
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
@@ -713,8 +746,9 @@ const ProjectCard = ({ project, index }) => {
               </motion.div>
             </motion.a>
 
+            {/* Owner avatar (w-25/h-25 aren't real Tailwind classes, so sizes are explicit now) */}
             <motion.div
-              className="absolute top-3 left-3 w-25 h-25 overflow-hidden bg-zinc-900 border-4 border-black rounded-[50%]  shadow-2xl cursor-pointer"
+              className="absolute top-2 left-2 sm:top-3 sm:left-3 w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 overflow-hidden bg-zinc-900 border-2 sm:border-4 border-black rounded-full shadow-2xl cursor-pointer"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
               onClick={() => setIsImageEnlarged(true)}
@@ -722,7 +756,7 @@ const ProjectCard = ({ project, index }) => {
               <img
                 src={project.owner_image}
                 alt={project.owner_name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </motion.div>
           </motion.div>
@@ -742,8 +776,9 @@ const ProjectCard = ({ project, index }) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute top-8 right-8 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-10"
               onClick={() => setIsImageEnlarged(false)}
+              aria-label="Close"
             >
               <X className="w-6 h-6" />
             </motion.button>
@@ -753,19 +788,21 @@ const ProjectCard = ({ project, index }) => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-2xl max-h-[80vh] rounded-lg bg-cover overflow-hidden"
+              className="relative w-full max-w-2xl rounded-lg overflow-hidden bg-zinc-900"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={project.owner_image}
                 alt={project.owner_name}
-                className="w-full h-[500px] object-cover object-center"
+                className="w-full h-auto max-h-[75vh] object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 sm:p-6">
                 <p className="text-xs font-semibold tracking-wider text-gray-400 mb-1">
                   CREATED BY
                 </p>
-                <p className="text-2xl font-black">{project.owner_name}</p>
+                <p className="text-xl sm:text-2xl font-black">
+                  {project.owner_name}
+                </p>
               </div>
             </motion.div>
           </motion.div>
@@ -782,10 +819,10 @@ const AchievementsSection = ({ achievements }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="py-20"
+      className="py-10 sm:py-20"
     >
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {achievements.map((achievement, index) => (
             <AchievementCard
               key={achievement.id}
@@ -800,7 +837,6 @@ const AchievementsSection = ({ achievements }) => {
 };
 
 const AchievementCard = ({ achievement, index }) => {
-  const [isHovered, setIsHovered] = useState(false);
   const [imageHovered, setImageHovered] = useState(false);
   const [isImageEnlarged, setIsImageEnlarged] = useState(false);
 
@@ -810,24 +846,23 @@ const AchievementCard = ({ achievement, index }) => {
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.7, delay: index * 0.1 }}
-        className="group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        transition={{ duration: 0.7, delay: (index % 2) * 0.1 }}
+        className="group min-w-0"
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         <div className="relative h-full bg-zinc-950 overflow-hidden flex flex-col">
-          {/* Image section */}
-          <div className="relative h-64 overflow-hidden">
+          {/* Image: natural height on mobile (no cropping), fixed crop only from md up
+              so the two-column grid rows stay even. */}
+          <div className="relative overflow-hidden md:h-64">
             <div
-              className="relative w-full h-full overflow-hidden cursor-pointer"
+              className="relative w-full md:h-full overflow-hidden cursor-pointer"
               onMouseEnter={() => setImageHovered(true)}
               onMouseLeave={() => setImageHovered(false)}
             >
               <motion.img
                 src={achievement.image_url}
                 alt={achievement.title}
-                className="w-full h-full object-cover object-center"
+                className="block w-full h-auto md:h-full object-cover object-center"
                 animate={{ scale: imageHovered ? 1.1 : 1 }}
                 transition={{ duration: 0.6 }}
               />
@@ -836,13 +871,13 @@ const AchievementCard = ({ achievement, index }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: imageHovered ? 1 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-black/70"
+                className="absolute inset-0 bg-black/70 pointer-events-none"
               />
             </div>
 
             {/* Achiever image (click to enlarge) */}
             <motion.div
-              className="absolute top-3 left-3 w-24 h-24 overflow-hidden bg-zinc-900 border-4 border-black rounded-full shadow-2xl cursor-pointer z-10"
+              className="absolute top-2 left-2 sm:top-3 sm:left-3 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 overflow-hidden bg-zinc-900 border-2 sm:border-4 border-black rounded-full shadow-2xl cursor-pointer z-10"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
               onClick={() => setIsImageEnlarged(true)}
@@ -850,18 +885,18 @@ const AchievementCard = ({ achievement, index }) => {
               <img
                 src={achievement.achiever_image}
                 alt={achievement.achiever_name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </motion.div>
           </div>
 
           {/* Content */}
-          <div className="p-8 bg-zinc-950 flex-1 flex flex-col">
-            <h3 className="text-2xl font-black mb-2 tracking-tight">
+          <div className="p-5 sm:p-8 bg-zinc-950 flex-1 flex flex-col">
+            <h3 className="text-xl sm:text-2xl font-black mb-2 tracking-tight break-words">
               {achievement.title}
             </h3>
 
-            <p className="text-sm font-semibold text-gray-500 mb-4 tracking-wider">
+            <p className="text-xs sm:text-sm font-semibold text-gray-500 mb-4 tracking-wider">
               {achievement.subtitle}
             </p>
 
@@ -869,40 +904,33 @@ const AchievementCard = ({ achievement, index }) => {
               <img
                 src={achievement.achiever_image}
                 alt={achievement.achiever_name}
-                className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
+                className="w-10 h-10 rounded-full object-cover object-top border-2 border-white/20 shrink-0"
               />
-              <div>
-                <p className="text-xs font-semibold tracking-wider text-gray-500">
+              <div className="min-w-0">
+                <p className="text-[10px] sm:text-xs font-semibold tracking-wider text-gray-500">
                   ACHIEVED BY
                 </p>
-                <p className="text-base font-bold">
+                <p className="text-sm sm:text-base font-bold truncate">
                   {achievement.achiever_name}
                 </p>
               </div>
             </div>
 
             <p
-              className="text-gray-400 leading-relaxed mb-6"
+              className="text-gray-400 leading-relaxed mb-5 sm:mb-6"
               style={{ fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.6 }}
             >
               {achievement.description}
             </p>
 
-            <div className="flex items-center gap-3 mb-6 text-sm">
-              <Calendar className="w-4 h-4 text-gray-500" />
+            <div className="flex items-center gap-3 mb-5 sm:mb-6 text-sm">
+              <Calendar className="w-4 h-4 text-gray-500 shrink-0" />
               <span className="text-gray-400">
-                {new Date(achievement.achievement_date).toLocaleDateString(
-                  "en-US",
-                  {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  },
-                )}
+                {formatDate(achievement.achievement_date)}
               </span>
             </div>
 
-            <div className="border-t border-white/10 pt-6 flex justify-end mt-auto">
+            <div className="border-t border-white/10 pt-4 sm:pt-6 flex justify-end mt-auto">
               <div className="flex gap-3">
                 <motion.a
                   href={achievement.github_url}
@@ -910,7 +938,8 @@ const AchievementCard = ({ achievement, index }) => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2.5 bg-white/5 hover:bg-purple-600 transition-all duration-300"
+                  className="p-3 sm:p-2.5 bg-white/5 hover:bg-purple-600 transition-all duration-300"
+                  aria-label="GitHub"
                 >
                   <Github className="w-4 h-4" />
                 </motion.a>
@@ -921,7 +950,8 @@ const AchievementCard = ({ achievement, index }) => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2.5 bg-white/5 hover:bg-blue-600 transition-all duration-300"
+                  className="p-3 sm:p-2.5 bg-white/5 hover:bg-blue-600 transition-all duration-300"
+                  aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
                 </motion.a>
@@ -945,8 +975,9 @@ const AchievementCard = ({ achievement, index }) => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute top-8 right-8 p-3 bg-white/10 hover:bg-white/20 rounded-full"
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 p-3 bg-white/10 hover:bg-white/20 rounded-full z-10"
               onClick={() => setIsImageEnlarged(false)}
+              aria-label="Close"
             >
               <X className="w-6 h-6" />
             </motion.button>
@@ -956,20 +987,20 @@ const AchievementCard = ({ achievement, index }) => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-2xl w-full"
+              className="relative w-full max-w-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={achievement.achiever_image}
                 alt={achievement.achiever_name}
-                className="w-full h-auto max-h-[80vh] object-contain"
+                className="w-full h-auto max-h-[75vh] object-contain"
               />
 
-              <div className="absolute bottom-4 left-16 z-10">
-                <p className="text-xs font-semibold tracking-wider text-gray-500">
+              <div className="absolute bottom-3 left-4 sm:bottom-4 sm:left-8 z-10">
+                <p className="text-xs font-semibold tracking-wider text-gray-300">
                   ACHIEVED BY
                 </p>
-                <p className="text-2xl font-black text-white">
+                <p className="text-xl sm:text-2xl font-black text-white drop-shadow-lg">
                   {achievement.achiever_name}
                 </p>
               </div>
