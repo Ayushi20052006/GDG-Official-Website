@@ -11,7 +11,7 @@ import {
   Loader2,
 } from "lucide-react";
 import React, { useState, useEffect } from "react";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 
 export default function Contact() {
   /* ================= EXISTING LOGIC (UNCHANGED) ================= */

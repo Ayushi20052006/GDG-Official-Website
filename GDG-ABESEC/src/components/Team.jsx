@@ -6,7 +6,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import Navbar from "./ui/Navbar";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 
 /* ============================================================
    HELPERS
@@ -114,7 +114,7 @@ const teamMembers = {
         },
         {
           name: "Vansh Saxena",
-          role: "Tech Lead",
+          role: "Technical Lead",
           description:
             "Hey I am your tech lead currently diving more into the cloud engineering and devops field and I love to play cricket and listening good in my free time and my in my time  I love to do gym and seeking advice from much more experience people around me to help me in future and career growth. And I think I am a good listener as well. So always here to listen up to your queries.",
           img: "/TeamPageImages/Vansh_Saxena_TL.png",
@@ -272,10 +272,13 @@ const TeamMemberModal = ({ member, onClose }) => {
     };
     window.addEventListener("keydown", handleKeyDown);
     const originalOverflow = document.body.style.overflow;
+    const lenis = window.__lenis;
     document.body.style.overflow = "hidden";
+    lenis?.stop();
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = originalOverflow;
+      lenis?.start();
     };
   }, [onClose]);
 
@@ -292,7 +295,7 @@ const TeamMemberModal = ({ member, onClose }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/90 sm:bg-black/85 backdrop-blur-none sm:backdrop-blur-xl"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.92, y: 30 }}
@@ -300,14 +303,14 @@ const TeamMemberModal = ({ member, onClose }) => {
         exit={{ opacity: 0, scale: 0.94, y: 20 }}
         transition={{ type: "spring", damping: 26, stiffness: 320 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl bg-gradient-to-b from-[#14141c] via-[#0d0d12] to-[#07070a] rounded-3xl border border-white/10 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9),0_0_50px_rgba(66,133,244,0.18)] overflow-hidden max-h-[92vh] flex flex-col"
+        className="relative w-full max-w-4xl bg-gradient-to-b from-[#14141c] via-[#0d0d12] to-[#07070a] rounded-xl sm:rounded-3xl border border-white/10 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9),0_0_50px_rgba(66,133,244,0.18)] overflow-hidden max-h-[96svh] sm:max-h-[92vh] flex flex-col"
       >
         {/* Top Signature GDG 4-Color Glowing Gradient Bar */}
         <div className="h-1.5 w-full bg-gradient-to-r from-[#4285F4] via-[#EA4335] via-[#FBBC04] to-[#34A853]" />
 
         {/* Ambient Glow Orbs inside Modal */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="hidden sm:block absolute top-0 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="hidden sm:block absolute bottom-0 right-0 w-72 h-72 bg-green-500/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Close Button */}
         <button
@@ -321,15 +324,20 @@ const TeamMemberModal = ({ member, onClose }) => {
         </button>
 
         {/* Scrollable Content Container */}
-        <div className="overflow-y-auto p-6 sm:p-8 md:p-10 relative z-10 custom-modal-scrollbar">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div
+          data-lenis-prevent
+          className="overflow-y-auto overscroll-contain touch-pan-y p-4 sm:p-8 md:p-10 relative z-10 custom-modal-scrollbar"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-center">
             {/* LEFT SIDE: Nicely Portrayed Image Frame with GDG Accents */}
             <div className="md:col-span-5 flex flex-col items-center">
-              <div className="relative w-full aspect-[3/4] max-h-[480px] rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-black group flex items-center justify-center">
+              <div className="relative w-full aspect-[3/4] max-h-[55svh] sm:max-h-[480px] rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-black group flex items-center justify-center">
                 {member.img ? (
                   <img
                     src={member.img}
                     alt={member.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
@@ -829,6 +837,10 @@ const TeamMemberCard = ({ member, onSelect }) => {
             aspect-ratio: 3 / 4;
             height: auto;
             margin: 0 auto;
+            transform: none !important;
+            opacity: 1 !important;
+            will-change: auto;
+            transition: none;
           }
           .tm-overlay {
             padding: 22px;
@@ -902,6 +914,8 @@ const SectionHeading = ({ title }) => {
           .tm-section-heading {
             padding: 0 16px;
             margin-bottom: 35px;
+            transform: none !important;
+            opacity: 1 !important;
           }
           .tm-section-title {
             font-size: clamp(1.5rem, 6.5vw, 2.8rem);

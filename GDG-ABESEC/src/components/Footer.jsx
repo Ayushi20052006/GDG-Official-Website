@@ -74,7 +74,7 @@ function Footer() {
           {/* Brand section */}
           <div className="flex flex-col space-y-2 md:col-span-2 md:order-1 md:items-center lg:col-span-1 lg:order-none items-center md:items-center lg:items-start text-center lg:text-left mb-6 md:mb-8 lg:mb-0">
             <div className="flex items-center justify-center lg:justify-start gap-2">
-              <img src="/logo.png" alt="GDG Logo" className="h-7 w-7 sm:h-8 sm:w-8 lg:h-10 lg:w-10 object-contain"/>
+              <img src="/logo.webp" alt="GDG Logo" className="h-7 w-7 sm:h-8 sm:w-8 lg:h-10 lg:w-10 object-contain"/>
               {/* ONE LINE — Mobile & Tablet */}
               <span className="text-lg sm:text-xl font-semibold text-white break-words max-w-[98%] text-center lg:hidden">
                 Google Developer Groups

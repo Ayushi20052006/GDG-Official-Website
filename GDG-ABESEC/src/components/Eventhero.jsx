@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Navbar from "./ui/Navbar";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 
 const EventHero = ({ showPast, setShowPast }) => {
   /* ===== STATE MANAGEMENT ===== */

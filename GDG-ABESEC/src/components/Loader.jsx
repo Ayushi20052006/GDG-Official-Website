@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 import "../styles/Loader.css";
 
 const quotes = [
