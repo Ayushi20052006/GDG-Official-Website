@@ -14,7 +14,7 @@ import Navbar from "../components/ui/Navbar";
 import ScrollProgressBar from "../components/ScrollProgressBar";
 import CursorTrail from "../components/ui/CursorTrail";
 import Footer from "../components/Footer";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 
 const mockProjects = [
   {
@@ -22,8 +22,8 @@ const mockProjects = [
     title: "PowerMesh",
     description:
       "PowerMesh is a decentralized distributed computing platform that connects users who need computational power with devices that have idle CPU or GPU resources. It offers a cost-effective alternative to traditional cloud computing by enabling secure, peer-to-peer resource sharing using containerized execution and workload isolation.",
-    thumbnail_url: "/projects-imgs/kavya-projects.png",
-    owner_image: "/projects-imgs/kavya.png",
+    thumbnail_url: "/projects-imgs/kavya-projects.webp",
+    owner_image: "/projects-imgs/kavya.webp",
     owner_name: "Kavya Jain",
     github_url: "https://github.com/kavya-jain14/POWERMESH",
     linkedin_url: "https://www.linkedin.com/in/kavya-jain-421119390/",
@@ -35,8 +35,8 @@ const mockProjects = [
     title: "Metrologic",
     description:
       "Evidence-Backed AI for Legal Metrology Inspection: MetroLogic is an AI-assisted inspection platform for checking selected packaged-commodity declarations under Legal Metrology requirements.",
-    thumbnail_url: "/projects-imgs/ayushman-projects.jpg",
-    owner_image: "/projects-imgs/ayushman.jpeg",
+    thumbnail_url: "/projects-imgs/ayushman-projects.webp",
+    owner_image: "/projects-imgs/ayushman.webp",
     owner_name: "Ayushman Shukla",
     github_url: "https://github.com/ayushmanshukla362/Metrologic",
     linkedin_url: "https://www.linkedin.com/in/ayushman-shukla-30b714391/",
@@ -48,8 +48,8 @@ const mockProjects = [
     title: "TaxGenie",
     description:
       "TaxGenie is an AI-powered platform simplifying tax management, GST compliance, and financial filing for individuals and small businesses in India.",
-    thumbnail_url: "/projects-imgs/uday-projects.png",
-    owner_image: "/projects-imgs/uday.jpeg",
+    thumbnail_url: "/projects-imgs/uday-projects.webp",
+    owner_image: "/projects-imgs/uday.webp",
     owner_name: "Uday Jain",
     github_url: "https://github.com/udayjain06/CA-Assistant",
     linkedin_url: "https://www.linkedin.com/in/uday-jain-80a312308/",
@@ -61,8 +61,8 @@ const mockProjects = [
     title: "ZARA COLLECTION",
     description:
       "ZARA COLLECTION is a responsive fashion website showcasing affordable ethnic wear, including short kurtis, long kurtis, Farsi suits, and layered gowns. Visitors can browse product designs, sizes, and price ranges, read customer reviews, and contact the store to order through WhatsApp",
-    thumbnail_url: "/projects-imgs/anjali-projects.png",
-    owner_image: "/projects-imgs/anjali.jpeg",
+    thumbnail_url: "/projects-imgs/anjali-projects.webp",
+    owner_image: "/projects-imgs/anjali.webp",
     owner_name: "Anjali Dewari",
     github_url: "https://github.com/AnjaliDewari19/Project--Zara",
     linkedin_url: "https://www.linkedin.com/in/anjali-dewari/",
@@ -74,8 +74,8 @@ const mockProjects = [
     title: "AceStudy",
     description:
       "Acestudy is a smart learning platform offering notes, previous year question papers, discussion forums, and a faculty dashboard, enabling organized study, collaboration, and effective academic management.",
-    thumbnail_url: "/projects-imgs/priyatosh-project.png",
-    owner_image: "/projects-imgs/priyatosh.jpg",
+    thumbnail_url: "/projects-imgs/priyatosh-project.webp",
+    owner_image: "/projects-imgs/priyatosh.webp",
     owner_name: "Priyatosh Kumar",
     github_url: "https://github.com/PriyatoshKumarShahi/Study-Library",
     linkedin_url: "https://www.linkedin.com/in/priyatoshkumarshahi/",
@@ -94,8 +94,8 @@ const mockProjects = [
     title: "Smart Resume Reviewer",
     description:
       "Smart Resume Reviewer is a web-based application that analyzes resumes and provides structured feedback along with an improved version of the resume. It evaluates content, formatting, and skills presentation, highlighting areas of improvement to help users create clearer and more effective resumes.",
-    thumbnail_url: "/projects-imgs/riddhima-project.jpg",
-    owner_image: "/projects-imgs/riddhima.jpg",
+    thumbnail_url: "/projects-imgs/riddhima-project.webp",
+    owner_image: "/projects-imgs/riddhima.webp",
     owner_name: "Riddhima Agarwal",
     github_url:
       "https://github.com/RiddhimaAgarwal28/Smart_Resume_Reviewer_Project",
@@ -108,8 +108,8 @@ const mockProjects = [
     title: "CampusShield",
     description:
       "CampusShield is a secure, anonymous web application designed to facilitate student complaint reporting with comprehensive admin management capabilities. Built with modern web technologies for reliability, security, and user experience.",
-    thumbnail_url: "/projects-imgs/anmol-project.png",
-    owner_image: "/projects-imgs/anmol.jpg",
+    thumbnail_url: "/projects-imgs/anmol-project.webp",
+    owner_image: "/projects-imgs/anmol.webp",
     owner_name: "Anmol Anand",
     github_url: "https://github.com/anandanmol1010/CampusShield",
     linkedin_url: "https://www.linkedin.com/in/anandanmol1010/",
@@ -121,8 +121,8 @@ const mockProjects = [
     title: "Muvies",
     description:
       "Muvies is a full-stack multimedia platform designed to provide users with seamless access to movies and music in one place. The application allows users to explore movies, watch trailers, and create personalized watchlists. Alongside movies, users can stream and download music, making it a complete entertainment solution.",
-    thumbnail_url: "/projects-imgs/tanishq-project.png",
-    owner_image: "/projects-imgs/tanishq.jpeg",
+    thumbnail_url: "/projects-imgs/tanishq-project.webp",
+    owner_image: "/projects-imgs/tanishq.webp",
     owner_name: "Tanishq Saxena",
     github_url: "https://github.com/Tanishq-7777/miniProjectMoviesSpace",
     linkedin_url: "https://www.linkedin.com/in/tanishq-saxena-20bb75344/",
@@ -137,8 +137,8 @@ const mockAchievements = [
     subtitle: "Second Runner-Up at RocketRide Buildathon",
     description:
       "Secured second runner-up at the RocketRide Buildathon in Delhi, organised at SDGI Global University.",
-    image_url: "/projects-imgs/kritika-achievement.jpg",
-    achiever_image: "/projects-imgs/kritika.jpg",
+    image_url: "/projects-imgs/kritika-achievement.webp",
+    achiever_image: "/projects-imgs/kritika.webp",
     achiever_name: "Kritika Singh",
     github_url: "https://github.com/kritikarajora2410-bot",
     linkedin_url: "https://www.linkedin.com/in/kritika-singh-a739a937b",
@@ -152,8 +152,8 @@ const mockAchievements = [
     subtitle: "Third Place in a 30-Hour Hackathon",
     description:
       "Achieved third place in a competitive 30-hour offline hackathon, demonstrating rapid prototyping and cross-functional execution under rigorous time constraints.",
-    image_url: "/projects-imgs/tushti-achievement.jpg",
-    achiever_image: "/projects-imgs/tushti.jpg",
+    image_url: "/projects-imgs/tushti-achievement.webp",
+    achiever_image: "/projects-imgs/tushti.webp",
     achiever_name: "Tushti Gupta",
     github_url: "https://github.com/TushtiGupta26",
     linkedin_url: "https://www.linkedin.com/in/tushtigupta26/",
@@ -167,8 +167,8 @@ const mockAchievements = [
     subtitle: "980+ Problems Solved",
     description:
       "Solved over 980 problems across LeetCode, CodeChef, HackerRank, and GeeksforGeeks, demonstrating strong problem-solving skills, consistency, and proficiency in Data Structures and Algorithms through competitive programming.",
-    image_url: "/projects-imgs/nidhi-achievement.png",
-    achiever_image: "/projects-imgs/nidhi.jpg",
+    image_url: "/projects-imgs/nidhi-achievement.webp",
+    achiever_image: "/projects-imgs/nidhi.webp",
     achiever_name: "Nidhi Rathor",
     github_url: "https://github.com/nidhirathor6260-ui",
     linkedin_url: "https://www.linkedin.com/in/nidhi-rathor-6656aa382/",
@@ -182,8 +182,8 @@ const mockAchievements = [
     subtitle: "Top 7 in the Open Innovation Track",
     description:
       "Secured a top-7 position among 2,744 registrations in the Open Innovation track at Brainwave 2026, a national-level hackathon held at GGSIPU's East Delhi campus.",
-    image_url: "/projects-imgs/paavni-achievement.jpg",
-    achiever_image: "/projects-imgs/paavni.jpg",
+    image_url: "/projects-imgs/paavni-achievement.webp",
+    achiever_image: "/projects-imgs/paavni.webp",
     achiever_name: "Paavni Rastogi",
     github_url: "https://github.com/paavnirastogi0109",
     linkedin_url: "https://www.linkedin.com/in/paavni-rastogi-b4213536b",
@@ -197,8 +197,8 @@ const mockAchievements = [
     subtitle: "National-Level Hackathon Finalist",
     description:
       "Reached the national-level finals of Decode SIH at IIIT Delhi as part of Team Lumora. The team built a Smart Traffic Controller using intelligent traffic analysis, digital twin technology, dynamic signal management, and emergency vehicle prioritisation.",
-    image_url: "/projects-imgs/sonali-achievement.jpg",
-    achiever_image: "/projects-imgs/sonali.jpg",
+    image_url: "/projects-imgs/sonali-achievement.webp",
+    achiever_image: "/projects-imgs/sonali.webp",
     achiever_name: "Sonali Singh",
     github_url: "https://github.com/Sonali7985",
     linkedin_url: "https://www.linkedin.com/in/sonali-singh-823a2a3a1",
@@ -212,8 +212,8 @@ const mockAchievements = [
     subtitle: "Winner of Clash of Coders 2025",
     description:
       "Secured first place in Clash of Coders 2025, a prestigious competitive programming contest, by demonstrating exceptional problem-solving skills and algorithmic expertise.",
-    image_url: "/projects-imgs/uttkarsh-achievement.jpeg",
-    achiever_image: "/projects-imgs/uttkarsh.jpg",
+    image_url: "/projects-imgs/uttkarsh-achievement.webp",
+    achiever_image: "/projects-imgs/uttkarsh.webp",
     achiever_name: "Utkarsh Agarwal",
     github_url: "https://github.com/Utkarsh-cod",
     linkedin_url: "https://www.linkedin.com/in/utkarsh-agarwal-8b0342362/",
@@ -227,8 +227,8 @@ const mockAchievements = [
     subtitle: "Winner of Smart India Hackathon 2025",
     description:
       "Won Smart India Hackathon 2025, a prestigious national level innovation competition organized by the Government of India, showcasing excellence in problem-solving and technological innovation.",
-    image_url: "/projects-imgs/anmol-achievement.jpg",
-    achiever_image: "/projects-imgs/anmol.jpg",
+    image_url: "/projects-imgs/anmol-achievement.webp",
+    achiever_image: "/projects-imgs/anmol.webp",
     achiever_name: "Anmol Anand",
     github_url: "https://github.com/anandanmol1010",
     linkedin_url: "https://www.linkedin.com/in/anandanmol1010/",
@@ -242,8 +242,8 @@ const mockAchievements = [
     subtitle: "920+ Problems Solved",
     description:
       "Solved over 920 data structures and algorithm problems across multiple coding platforms, demonstrating strong problem-solving skills, consistency, and deep understanding of core DSA concepts.",
-    image_url: "/projects-imgs/ayushi-achievement.png",
-    achiever_image: "/projects-imgs/ayushi.jpg",
+    image_url: "/projects-imgs/ayushi-achievement.webp",
+    achiever_image: "/projects-imgs/ayushi.webp",
     achiever_name: "Ayushi Jha",
     github_url: "https://github.com/Ayushi20052006",
     linkedin_url: "https://www.linkedin.com/in/ayushi-jha-482801310/",
@@ -325,20 +325,20 @@ const Showcase = () => {
       {/* ================= BRANDING ================= */}
       {/* On mobile the whole brand block fades out after the hero so it never covers cards */}
       <div
-        className={`fixed top-3 left-3 sm:top-4 sm:left-4 md:top-8 md:left-8 z-20 flex flex-col gap-1 sm:gap-2 pointer-events-none transition-opacity duration-500 ${
+        className={`fixed top-4 left-4 sm:top-5 sm:left-5 lg:top-8 lg:left-8 z-[105] flex max-w-[calc(100vw-6rem)] flex-col gap-1 sm:gap-1.5 lg:gap-2 pointer-events-none transition-opacity duration-500 ${
           !showBrandText ? "max-md:opacity-0 max-md:invisible" : "opacity-100"
         }`}
       >
         <div className="flex items-center gap-2 pointer-events-auto">
           <img
             src={logo}
-            className="h-8 w-10 sm:h-12 sm:w-14 md:h-14 md:w-20 object-contain"
+            className="h-8 w-10 shrink-0 object-contain sm:h-9 sm:w-12 md:h-10 md:w-14 lg:h-12 lg:w-[4.25rem] xl:h-14 xl:w-20"
             alt="gdgLogo"
           />
 
           {/* Google Text */}
           <div
-            className={`flex items-center gap-0.5 font-bold text-lg sm:text-2xl md:text-3xl
+            className={`flex items-center gap-0.5 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl
       transition-all duration-500 ease-out
       ${!showBrandText ? "opacity-0 -translate-x-4" : "opacity-100 translate-x-0"}`}
           >
@@ -353,7 +353,7 @@ const Showcase = () => {
 
         {/* Developer Groups */}
         <div
-          className={`text-white text-xs sm:text-base md:text-lg tracking-wide ml-0.5
+          className={`text-white text-[11px] sm:text-xs md:text-sm lg:text-lg tracking-wide ml-0.5
     transition-all duration-500 ease-out
     ${!showBrandText ? "opacity-0 -translate-y-2" : "opacity-100 translate-y-0"}`}
         >
@@ -372,6 +372,14 @@ const Showcase = () => {
 
           html {
             scroll-behavior: smooth;
+          }
+
+          @media (max-width: 1023px) and (max-height: 700px) {
+            .showcase-hero {
+              align-items: flex-start;
+              padding-top: 8.75rem;
+              padding-bottom: 3rem;
+            }
           }
 
           ::-webkit-scrollbar {
@@ -401,7 +409,7 @@ const Showcase = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative min-h-[100svh] flex items-center justify-center px-4 overflow-hidden"
+        className="showcase-hero relative min-h-[100svh] flex items-center justify-center overflow-hidden px-4 pt-32 pb-14 sm:px-6 sm:pt-36 sm:pb-16 md:pt-40 lg:pt-44"
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-0 w-full h-px bg-white"></div>
@@ -412,7 +420,7 @@ const Showcase = () => {
           <div className="absolute top-0 left-3/4 h-full w-px bg-white"></div>
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
+        <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -432,10 +440,11 @@ const Showcase = () => {
               relative 
               inline-block 
               px-2 sm:px-4
-              text-5xl sm:text-7xl md:text-8xl lg:text-9xl 
+              text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl
               font-black 
               mb-6 sm:mb-8 
               tracking-tighter
+              leading-none
             "
             style={{
               background: "linear-gradient(135deg, #fff 0%, #888 100%)",
@@ -467,7 +476,7 @@ const Showcase = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-sm sm:text-base md:text-xl text-gray-500 max-w-3xl mx-auto mb-8 sm:mb-12 px-2"
+            className="max-w-3xl mx-auto mb-8 px-2 text-sm leading-relaxed text-gray-500 sm:mb-12 sm:px-6 sm:text-base md:text-lg lg:text-xl"
             style={{
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -481,7 +490,7 @@ const Showcase = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex items-center justify-center gap-2 text-gray-500 text-xs"
+            className="flex items-center justify-center gap-2 text-center text-[10px] text-gray-500 sm:text-xs"
             style={{
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -500,11 +509,11 @@ const Showcase = () => {
         transition={{ duration: 0.6 }}
         className="sticky top-0 z-[0] bg-black/80 backdrop-blur-xl border-b border-white/10"
       >
-        <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
-          <div className="grid grid-cols-2 sm:flex sm:justify-center gap-2">
+        <div className="container mx-auto px-4 py-4 sm:py-8">
+          <div className="grid w-full max-w-md grid-cols-2 gap-2 mx-auto">
             <button
               onClick={() => setActiveTab("projects")}
-              className={`relative px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-wider transition-all duration-300 ${
+              className={`relative min-w-0 px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-[0.08em] sm:tracking-wider transition-all duration-300 ${
                 activeTab === "projects"
                   ? "text-black"
                   : "text-white hover:text-gray-300"
@@ -521,7 +530,7 @@ const Showcase = () => {
             </button>
             <button
               onClick={() => setActiveTab("achievements")}
-              className={`relative px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-wider transition-all duration-300 ${
+              className={`relative min-w-0 px-3 sm:px-10 py-3 sm:py-4 text-xs sm:text-base font-bold tracking-[0.08em] sm:tracking-wider transition-all duration-300 ${
                 activeTab === "achievements"
                   ? "text-black"
                   : "text-white hover:text-gray-300"
@@ -718,6 +727,8 @@ const ProjectCard = ({ project, index }) => {
               <motion.img
                 src={project.thumbnail_url}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
                 className="block w-full h-auto lg:h-full object-cover object-center"
                 animate={{ scale: imageHovered ? 1.05 : 1 }}
                 transition={{ duration: 0.6 }}
@@ -862,6 +873,8 @@ const AchievementCard = ({ achievement, index }) => {
               <motion.img
                 src={achievement.image_url}
                 alt={achievement.title}
+                loading="lazy"
+                decoding="async"
                 className="block w-full h-auto md:h-full object-cover object-center"
                 animate={{ scale: imageHovered ? 1.1 : 1 }}
                 transition={{ duration: 0.6 }}
