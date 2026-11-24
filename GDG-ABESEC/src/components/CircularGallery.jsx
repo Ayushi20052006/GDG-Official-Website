@@ -275,87 +275,84 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-       {
-        image: "exora1.jpg",
+      {
+        image: "/exora1.webp",
         text: "Exora",
       },
       {
-        image: "hackheaven3.jpg",
+        image: "/hackheaven3.webp",
         text: "Textured surface",
       },
       {
-        image: "mtg1.JPG",
+        image: "/mtg1.webp",
         text: "Social media image",
       },
-       {
-        image: "exora2.jpg",
+      {
+        image: "/exora2.webp",
         text: "Exora",
       },
-     
       {
-        image: "image2ForDomeGal.jpeg",
+        image: "/image2ForDomeGal.webp",
         text: "Modern sculpture",
       },
       {
-        image: "techwinter1.jpg",
+        image: "/techwinter1.webp",
         text: "Social media image",
       },
-       {
-        image: "exora7.jpg",
+      {
+        image: "/exora7.webp",
         text: "Exora",
       },
       {
-        image: "hackheaven5.jpeg",
+        image: "/hackheaven5.webp",
         text: "Social media image",
       },
-     
       {
-        image: "image3ForDomeGal.jpeg",
+        image: "/image3ForDomeGal.webp",
         text: "Digital artworkimage",
       },
-     
       {
-        image: "mtg2.JPG",
+        image: "/mtg2.webp",
         text: "Social media image",
       },
       {
-        image: "exora3.jpg",
+        image: "/exora3.webp",
         text: "Exora",
       },
       {
-        image: "image4ForDomeGal.jpg",
+        image: "/image4ForDomeGal.webp",
         text: "Contemporary art",
       },
       {
-        image: "exora6.jpg",
+        image: "/exora6.webp",
         text: "Exora",
       },
       {
-        image: "techwinter2.jpg",
+        image: "/techwinter2.webp",
         text: "Social media image",
       },
       {
-        image: "hackheaven4.jpg",
+        image: "/hackheaven4.webp",
         text: "Social media image",
       },
       {
-        image: "exora4.jpg",
+        image: "/exora4.webp",
         text: "Exora",
       },
       {
-        image: "image6ForDomeGal.jpg",
+        image: "/image6ForDomeGal.webp",
         text: "Social media image",
       },
       {
-        image: "mtg3.JPG",
+        image: "/mtg3.webp",
         text: "Social media image",
       },
       {
-        image: "exora5.jpg",
+        image: "/exora5.webp",
         text: "Exora",
       },
       {
-        image: "techwinter3.jpg",
+        image: "/techwinter3.webp",
         text: "Social media image",
       },
     ];
