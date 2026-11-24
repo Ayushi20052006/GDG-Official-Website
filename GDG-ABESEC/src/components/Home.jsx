@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion"; // Import Framer Motion
 import Navbar from "./ui/Navbar";
 import { HeroSection } from "./ui/HeroSection";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 
 const Home = () => {
   // 1. State for Branding Text (Visible only before 100vh)

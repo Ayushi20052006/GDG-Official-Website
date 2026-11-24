@@ -6,7 +6,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import Navbar from "./ui/Navbar";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 
 /* ============================================================
    HELPERS
