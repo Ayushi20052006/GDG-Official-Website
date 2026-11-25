@@ -78,8 +78,10 @@ export default function About() {
                 data-aos-delay="100"
               >
                 <img
-                  src="/image4ForDomeGal.jpg"
+                  src="/image4ForDomeGal.webp"
                   alt="Team collaboration"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>
@@ -90,8 +92,10 @@ export default function About() {
                 data-aos-delay="200"
               >
                 <img
-                  src="/hackheaven5.jpeg"
+                  src="/hackheaven5.webp"
                   alt="Workshop session"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>
@@ -102,8 +106,10 @@ export default function About() {
                 data-aos-delay="300"
               >
                 <img
-                  src="techwinter4.jpeg"
+                  src="/techwinter4.webp"
                   alt="Innovation hub"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>
@@ -114,8 +120,10 @@ export default function About() {
                 data-aos-delay="400"
               >
                 <img
-                  src="mtg2.0.jpg"
+                  src="/mtg2.0.webp"
                   alt="Developer community"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full  h-48 sm:h-56 md:h-64 lg:h-72 object-cover object-center bg-black transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>

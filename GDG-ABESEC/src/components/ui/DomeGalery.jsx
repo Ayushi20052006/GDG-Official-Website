@@ -3,98 +3,104 @@ import { useGesture } from "@use-gesture/react";
 
 const DEFAULT_IMAGES = [
   {
-    src: "image1ForDomeGal.jpeg",
+    src: "/image1ForDomeGal.webp",
     alt: "Abstract art",
   },
-  { src: "exora1.jpg", 
-    alt: "Exora" 
+  {
+    src: "/exora1.webp",
+    alt: "Exora",
   },
   {
-    src: "image2ForDomeGal.jpeg",
+    src: "/image2ForDomeGal.webp",
     alt: "Modern sculpture",
   },
   {
-    src: "image3ForDomeGal.jpeg",
+    src: "/image3ForDomeGal.webp",
     alt: "Digital artwork",
   },
-  { src: "exora2.jpg", 
-    alt: "Exora" 
+  {
+    src: "/exora2.webp",
+    alt: "Exora",
   },
   {
-    src: "image4ForDomeGal.jpg",
+    src: "/image4ForDomeGal.webp",
     alt: "Contemporary art",
   },
   {
-    src: "hackheaven3.jpg",
+    src: "/hackheaven3.webp",
     alt: "Textured surface",
   },
-  { src: "exora3.jpg", 
-    alt: "Exora" 
+  {
+    src: "/exora3.webp",
+    alt: "Exora",
   },
   {
-    src: "image6ForDomeGal.jpg",
+    src: "/image6ForDomeGal.webp",
     alt: "Social media image",
   },
   {
-    src: "mtg1.JPG",
-    alt: "Social media image",
-  },
-  { src: "exora4.jpg", 
-    alt: "Exora" 
-  },
-  {
-    src: "mtg2.JPG",
+    src: "/mtg1.webp",
     alt: "Social media image",
   },
   {
-    src: "mtg3.JPG",
+    src: "/exora4.webp",
+    alt: "Exora",
+  },
+  {
+    src: "/mtg2.webp",
     alt: "Social media image",
   },
   {
-    src: "techwinter1.jpg",
-    alt: "Social media image",
-  },
-  { src: "exora5.jpg", 
-    alt: "Exora" 
-  },
-  {
-    src: "techwinter2.jpg",
-    alt: "Social media image",
-  },
-  { src: "exora6.jpg", 
-    alt: "Exora" 
-  },
-  {
-    src: "techwinter3.jpg",
+    src: "/mtg3.webp",
     alt: "Social media image",
   },
   {
-    src: "hackheaven5.jpeg",
+    src: "/techwinter1.webp",
     alt: "Social media image",
   },
   {
-    src: "hackheaven4.jpg",
+    src: "/exora5.webp",
+    alt: "Exora",
+  },
+  {
+    src: "/techwinter2.webp",
     alt: "Social media image",
   },
   {
-    src: "techwinter5.jpg",
+    src: "/exora6.webp",
+    alt: "Exora",
   },
   {
-    src: "mtg4.JPG",
+    src: "/techwinter3.webp",
+    alt: "Social media image",
   },
   {
-    src: "hackheaven2.jpg",
-  },
-  { src: "exora7.jpg", 
-    alt: "Exora" 
+    src: "/hackheaven5.webp",
+    alt: "Social media image",
   },
   {
-    src: "hackheaven1.jpg",
+    src: "/hackheaven4.webp",
+    alt: "Social media image",
   },
   {
-    src:"techwinter4.jpeg",
+    src: "/techwinter5.webp",
   },
-
+  {
+    src: "/mtg4.webp",
+  },
+  {
+    src: "/hackheaven2.webp",
+  },
+  {
+    src: "/exora7.webp",
+    alt: "Exora",
+  },
+  {
+    src: "/hackheaven1.webp",
+  },
+  {
+    src: "/techwinter4.webp",
+  },
 ];
 
 const DEFAULTS = {

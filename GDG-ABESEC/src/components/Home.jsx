@@ -13,33 +13,33 @@ const Home = () => {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let ticking = false;
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const windowHeight = window.innerHeight;
 
-      // --- LOGIC A: Branding Text ---
-      // Only show text if we are within the first screen (less than 100vh)
-      if (currentScrollY < windowHeight) {
-        setShowBrandText(true);
-      } else {
-        setShowBrandText(false);
-      }
+          setShowBrandText((prev) => {
+            const next = currentScrollY < windowHeight;
+            return prev === next ? prev : next;
+          });
 
-      // --- LOGIC B: Navbar (Smart Scroll) ---
-      // Show if scrolling UP or at the very top
-      if (currentScrollY < lastScrollY || currentScrollY < 10) {
-        setIsNavbarVisible(true);
-      }
-      // Hide if scrolling DOWN and past the top
-      else if (currentScrollY > lastScrollY && currentScrollY > 10) {
-        setIsNavbarVisible(false);
-      }
+          if (currentScrollY < lastScrollY || currentScrollY < 10) {
+            setIsNavbarVisible((prev) => (prev ? prev : true));
+          } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
+            setIsNavbarVisible((prev) => (!prev ? prev : false));
+          }
 
-      lastScrollY = currentScrollY;
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

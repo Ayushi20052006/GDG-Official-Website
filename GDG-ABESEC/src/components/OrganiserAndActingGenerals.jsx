@@ -10,7 +10,7 @@ function OrganisersAndActingGenerals() {
       name: "Ayushi Jha",
       designation: "Organiser, GDG ABESEC",
       roleBadge: "Organiser",
-      src: "/OrganiserAndAG'sImages/Organiser1.png",
+      src: "/OrganiserAndAG'sImages/Organiser1.webp",
       socials: {
         linkedin: "https://www.linkedin.com/in/ayushi-jha-482801310/",
         github: "https://github.com/Ayushi20052006",
@@ -34,7 +34,7 @@ function OrganisersAndActingGenerals() {
       name: "Krish Srivastava",
       designation: "Organiser, GDG ABESEC",
       roleBadge: "Organiser",
-      src: "/OrganiserAndAG'sImages/Organiser3.png",
+      src: "/OrganiserAndAG'sImages/Organiser3.webp",
       socials: {
         linkedin: "https://www.linkedin.com/in/krish-srivastava-012345678/",
         github: "https://github.com/krishsrivastava",
@@ -46,7 +46,7 @@ function OrganisersAndActingGenerals() {
       name: "Aryan Kumar Yadav",
       designation: "Acting General, GDG ABESEC",
       roleBadge: "Acting General",
-      src: "/OrganiserAndAG'sImages/ActingGeneral1.jpeg",
+      src: "/OrganiserAndAG'sImages/ActingGeneral1.webp",
       socials: {
         linkedin: "https://www.linkedin.com/in/aryan-kumar-yadav/",
         github: "https://github.com/Aryan-Kr-Yadav",
@@ -58,7 +58,7 @@ function OrganisersAndActingGenerals() {
       name: "Riddhima Agarwal",
       designation: "Acting General, GDG ABESEC",
       roleBadge: "Acting General",
-      src: "/OrganiserAndAG'sImages/ActingGeneral2.jpeg",
+      src: "/OrganiserAndAG'sImages/ActingGeneral2.webp",
       socials: {
         linkedin: "https://www.linkedin.com/in/riddhimaagarwalbly/",
         twitter: "https://x.com/Riddhimaagr",
@@ -71,7 +71,7 @@ function OrganisersAndActingGenerals() {
       name: "Krishna Gupta",
       designation: "Acting General, GDG ABESEC",
       roleBadge: "Acting General",
-      src: "/OrganiserAndAG'sImages/ActingGeneral3.png",
+      src: "/OrganiserAndAG'sImages/ActingGeneral3.webp",
       socials: {
         linkedin: "https://www.linkedin.com/in/rollnum21/",
         github: "https://github.com/rollnum21",

@@ -17,10 +17,10 @@ const upcomingEvent = {
   date: "2026-11-28T10:00:00+05:30",
   link: "https://unstop.com/hackathons/exora-20-unveil-the-build-abes-engineering-college-1799143",
   tagline: "24 Hours of Relentless Innovation and Limitless Possibilities.",
-  background: "/exora-bg.png",
-  line: "/exora-line.png",
-  walker: "/exora-walker.png",
-  title: "/exora-title.png",
+  background: "/exora-bg.webp",
+  line: "/exora-line.webp",
+  walker: "/exora-walker.webp",
+  title: "/exora-title.webp",
 };
 
 const EventsTimelineWithUpcoming = () => {
@@ -38,12 +38,12 @@ const EventsTimelineWithUpcoming = () => {
       name: "Exora",
       date: "March 21, 2026",
       description: "A showcase of innovative projects and ideas from students, featuring interactive demos, presentations, and networking opportunities.",
-      coverImage: "../exora-cover.jpg",
+      coverImage: "/exora-cover.webp",
       gallery: [
-        "../exora1.jpg",
-        "../exora2.jpg",
-        "../exora3.jpg",
-        "../exora4.jpg"
+        "/exora1.webp",
+        "/exora2.webp",
+        "/exora3.webp",
+        "/exora4.webp"
       ]
     },
     {
@@ -51,12 +51,12 @@ const EventsTimelineWithUpcoming = () => {
       name: "MTG 2.0",
       date: "November 29, 2025",
       description: "Annual technology conference featuring keynote speakers from leading tech companies and interactive workshops on AI, blockchain, and cloud computing.",
-      coverImage: "../mtg2.0.jpg",
+      coverImage: "/mtg2.0.webp",
       gallery: [
-        "../mtg1.JPG",
-        "../mtg2.JPG",
-        "../mtg3.JPG",
-        "../mtg4.JPG"
+        "/mtg1.webp",
+        "/mtg2.webp",
+        "/mtg3.webp",
+        "/mtg4.webp"
       ]
     },
     {
@@ -64,12 +64,12 @@ const EventsTimelineWithUpcoming = () => {
       name: "Hackheaven 2.0",
       date: "May 3, 2025",
       description: "24-hour coding marathon where developers collaborated to build innovative solutions for real-world problems. Amazing projects were showcased.",
-      coverImage: "../hackheaven4.jpg",
+      coverImage: "/hackheaven4.webp",
       gallery: [
-        "../hackheaven1.jpg",
-        "../hackheaven2.jpg",
-        "../hackheaven3.jpg",
-        "../hackheaven5.jpeg"
+        "/hackheaven1.webp",
+        "/hackheaven2.webp",
+        "/hackheaven3.webp",
+        "/hackheaven5.webp"
       ]
     },
     {
@@ -77,12 +77,12 @@ const EventsTimelineWithUpcoming = () => {
       name: "Tech Winter Break",
       date: "December 26, 2024",
       description: "Yearly gathering for networking, knowledge sharing, and building connections. Featured lightning talks and open discussions on latest trends.",
-      coverImage: "../techwinter4.jpeg",
+      coverImage: "/techwinter4.webp",
       gallery: [
-        "../techwinter1.jpg",
-        "../techwinter2.jpg",
-        "../techwinter3.jpg",
-        "../techwinter5.jpg"
+        "/techwinter1.webp",
+        "/techwinter2.webp",
+        "/techwinter3.webp",
+        "/techwinter5.webp"
       ]
     },
     {
@@ -90,7 +90,7 @@ const EventsTimelineWithUpcoming = () => {
       name: "Branch & Beyond",
       date: "July 3, 2024",
       description: "Hands-on workshops covering modern web development, design thinking, and git methodologies for all skill levels.",
-      coverImage: "../event3.png",
+      coverImage: "/event3.webp",
       gallery: [
         "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop",
